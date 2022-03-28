@@ -2,5 +2,9 @@
     <string name="app_name">SimpleAppToDoList</string>
     <string name="login">Login</string>
     <string name="signup">Signup</string>
+    <string name="username">USERNAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="confirmpassword">CONFIRM PASSWORD</string>
+    <string name="signup2">SIGN UP</string>
     <string name="guest">Continue as a guest</string>
 </resources>
