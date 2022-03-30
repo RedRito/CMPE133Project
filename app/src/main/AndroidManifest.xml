@@ -10,6 +10,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleAppToDoList">
         <activity
+            android:name=".SearchActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_search"
+            android:theme="@style/Theme.SimpleAppToDoList.Fullscreen" />
+        <activity
+            android:name=".MapActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_map"
+            android:theme="@style/Theme.SimpleAppToDoList.Fullscreen" />
+        <activity
+            android:name=".HomePageActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/Theme.SimpleAppToDoList.Fullscreen" />
+        <activity
+            android:name=".ArticlesActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_articles"
+            android:theme="@style/Theme.SimpleAppToDoList.Fullscreen" />
+        <activity
+            android:name=".AcountActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_acount"
+            android:theme="@style/Theme.SimpleAppToDoList.Fullscreen" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
