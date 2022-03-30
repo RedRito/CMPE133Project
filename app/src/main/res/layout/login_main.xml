@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightgreen">
+    android:background="@color/lightgreen"
+    tools:context=".MainActivity">
 
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+
         android:focusable="true"
         android:fontFamily="sans-serif"
         android:gravity="center"
@@ -30,6 +32,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:gravity="center"
+
         android:text="@string/signup"
         android:clickable="true"
         android:focusable="true"
