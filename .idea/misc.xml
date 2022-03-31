@@ -23,6 +23,25 @@
         <entry key="..\:/Users/brand/AndroidStudioProjects/SimpleAppToDoList/app/src/main/res/layout/item_todo.xml" value="0.51875" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/SimpleAppToDoList/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.336" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/SimpleAppToDoList/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.336" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/drawable-v24/ic_articles_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/drawable-v24/ic_search_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/drawable/boxes.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/drawable/ic_articles_background.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/drawable/ic_plogo_background.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/drawable/ic_search_background.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/layout/activity_main.xml" value="0.17777777777777778" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/layout/fragment_fifth.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/layout/fragment_first.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/layout/fragment_fourth.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/layout/fragment_second.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/layout/fragment_third.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/layout/homepage_main.xml" value="0.33" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/layout/login_main.xml" value="0.17777777777777778" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/layout/signup_main.xml" value="0.17777777777777778" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/cmpe133ProjectV3/app/src/main/res/mipmap-anydpi-v26/ic_plogo.xml" value="0.1485" />
       </map>
     </option>
   </component>
