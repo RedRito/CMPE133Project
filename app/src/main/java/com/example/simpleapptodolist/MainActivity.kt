@@ -11,12 +11,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.login_main)
         val text: TextView = findViewById(R.id.tv_signup)
         val guest: TextView = findViewById(R.id.tv_guest)
+        val login: TextView = findViewById(R.id.tv_login)
         text.setOnClickListener{
             val intent = Intent(this@MainActivity, SignUpActivity::class.java)
             startActivity(intent)
         }
         guest.setOnClickListener{
             val intent = Intent(this@MainActivity, HomePageActivity::class.java)
+            startActivity(intent)
+        }
+        login.setOnClickListener {
+            val intent = Intent(this@MainActivity, SignInActivity::class.java)
             startActivity(intent)
         }
 
