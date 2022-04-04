@@ -10,10 +10,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_main)
         val text: TextView = findViewById(R.id.tv_signup)
+        val guest: TextView = findViewById(R.id.tv_guest)
         text.setOnClickListener{
             val intent = Intent(this@MainActivity, SignUpActivity::class.java)
             startActivity(intent)
         }
+        guest.setOnClickListener{
+            val intent = Intent(this@MainActivity, HomePageActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 }
