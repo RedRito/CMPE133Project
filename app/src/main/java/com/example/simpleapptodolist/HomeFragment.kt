@@ -13,12 +13,9 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ArticlesFragment.newInstance] factory method to
+ * Use the [HomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ArticlesFragment : Fragment(R.layout.fragment_articles) {
-
-
-
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
 }
