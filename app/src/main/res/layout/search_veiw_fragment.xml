@@ -1,0 +1,28 @@
+<?xmlversion="1.0"encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+<androidx.appcompat.widget.SearchView
+    android:id="@+id/svFragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:queryHint="Enter material"
+    android:iconifiedByDefault="false"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/searchview_background"
+    android:queryBackground="@android:color/transparent"/>
+
+    <ListView
+        android:id="@+id/materialList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:divider=""
+        android:visibility="visible" />
+    </LinearLayout>
