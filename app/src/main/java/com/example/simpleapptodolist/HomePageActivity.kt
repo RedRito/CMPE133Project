@@ -18,6 +18,7 @@ class HomePageActivity : AppCompatActivity() {
         val homeFragment = HomeFragment()
 
 
+
         //first Fragment that is shown
         setCurrentFragment(articlesFragment)
 
@@ -28,6 +29,12 @@ class HomePageActivity : AppCompatActivity() {
             }
             true
         }
+
+
+
+
+
+
 
     }
 
