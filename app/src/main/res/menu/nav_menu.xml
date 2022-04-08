@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Articles"
+        android:id="@+id/Articles"
+        android:icon="@mipmap/newsicon_foreground"/>
+    <item
+        android:title="Map"
+        android:id="@+id/Map"
+        android:icon="@mipmap/locationicon_foreground"/>
+    <item
+        android:title="Homepage"
+        android:id="@+id/home"
+        android:icon="@mipmap/ic_plogo_foreground"
+        />
+    <item
+        android:title="Search"
+        android:id="@+id/Search"
+        android:icon="@mipmap/searchicon_foreground"
+        />
+    <item
+        android:title="Profile"
+        android:id="@+id/profile"
+        android:icon="@mipmap/user_foreground"
+        />
+</menu>
