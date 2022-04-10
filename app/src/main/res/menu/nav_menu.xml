@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:title="Articles"
-        android:id="@+id/Articles"
+        android:id="@+id/articles"
         android:icon="@mipmap/newsicon_foreground"/>
     <item
         android:title="Map"
-        android:id="@+id/Map"
+        android:id="@+id/map"
         android:icon="@mipmap/locationicon_foreground"/>
     <item
         android:title="Homepage"
@@ -16,7 +16,7 @@
         />
     <item
         android:title="Search"
-        android:id="@+id/Search"
+        android:id="@+id/search"
         android:icon="@mipmap/searchicon_foreground"
         />
     <item
