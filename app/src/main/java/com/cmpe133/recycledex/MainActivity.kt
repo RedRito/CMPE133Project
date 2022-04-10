@@ -1,4 +1,4 @@
-package com.example.simpleapptodolist
+package com.cmpe133.recycledex
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

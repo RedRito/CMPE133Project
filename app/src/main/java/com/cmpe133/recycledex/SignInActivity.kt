@@ -1,11 +1,11 @@
-package com.example.simpleapptodolist
+package com.cmpe133.recycledex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class SignUpActivity : AppCompatActivity() {
+class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.signup_main)
+        setContentView(R.layout.activity_sign_in)
     }
 }

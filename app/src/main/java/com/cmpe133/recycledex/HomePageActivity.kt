@@ -1,9 +1,9 @@
-package com.example.simpleapptodolist
+package com.cmpe133.recycledex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.simpleapptodolist.databinding.ActivityHomePageBinding
+import com.cmpe133.recycledex.databinding.ActivityHomePageBinding
 import kotlinx.android.synthetic.main.activity_home_page.*
 
 class HomePageActivity : AppCompatActivity() {

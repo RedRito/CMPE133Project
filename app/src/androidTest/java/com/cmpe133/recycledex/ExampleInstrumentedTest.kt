@@ -1,4 +1,4 @@
-package com.example.simpleapptodolist
+package com.cmpe133.recycledex
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
