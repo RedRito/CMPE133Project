@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.simpleapptodolist">
+    package="com.cmpe133.recycledex">
 
     <application
         android:allowBackup="true"
@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleAppToDoList">
         <activity
-            android:name=".HomePageActivity"
+            android:name="com.cmpe133.recycledex.HomePageActivity"
             android:exported="false" />
         <activity
-            android:name=".SignInActivity"
+            android:name="com.cmpe133.recycledex.SignInActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:label="@string/title_activity_sign_in"
             android:theme="@style/Theme.SimpleAppToDoList.Fullscreen" />
         <activity
-            android:name=".SignUpActivity"
+            android:name="com.cmpe133.recycledex.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.cmpe133.recycledex.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

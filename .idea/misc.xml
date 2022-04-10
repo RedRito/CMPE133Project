@@ -4,35 +4,44 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2295" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/drawable/home_icons.xml" value="0.331" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/drawable/ic_home_clicked.xml" value="0.331" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/drawable/ic_home_unclicked.xml" value="0.3925" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2295" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/drawable/ic_plogo_background.xml" value="0.261" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/drawable/ic_recycleDex_background.xml" value="0.434" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/drawable/user_background.xml" value="0.331" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/activity_home_page.xml" value="0.33" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/activity_main.xml" value="0.48489583333333336" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/activity_sign_in.xml" value="0.19908814589665655" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/activity_sign_up.xml" value="0.32760416666666664" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/blank_fragment.xml" value="0.19908814589665655" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/bottom_nav_bar.xml" value="0.25" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_articles.xml" value="0.32864583333333336" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_fullscreen.xml" value="0.19908814589665655" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_home.xml" value="0.32864583333333336" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_homepage.xml" value="0.22872340425531915" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_profile.xml" value="0.22872340425531915" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_search.xml" value="0.4708333333333333" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/item_todo.xml" value="0.49895833333333334" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/login_main.xml" value="0.48489583333333336" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/navbartwo.xml" value="0.25" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/signup_main.xml" value="0.2864583333333333" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/menu/bottom_menu.xml" value="0.409375" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/menu/bottom_nav_two.xml" value="0.49895833333333334" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/menu/nav_menu.xml" value="0.3235897435897436" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2295" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2295" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/mipmap-anydpi-v26/ic_recycleDex.xml" value="0.281" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/mipmap-anydpi-v26/ic_recycleDex_round.xml" value="0.281" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/mipmap-anydpi-v26/ic_recycledex.xml" value="0.3475" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/xml/root_preferences.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/SimpleAppToDoList/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.336" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/SimpleAppToDoList/app/src/main/res/drawable/ic_launcher_background.xml" value="0.336" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/SimpleAppToDoList/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/SimpleAppToDoList/app/src/main/res/layout/item_todo.xml" value="0.51875" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/SimpleAppToDoList/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.336" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/SimpleAppToDoList/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.336" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/activity_home_page.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/activity_sign_in.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_articles.xml" value="0.16983695652173914" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_articles_page.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/item_todo.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/login_main.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/signup_main.xml" value="0.22" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/menu/nav_menu.xml" value="0.17552083333333332" />
       </map>
     </option>
   </component>
