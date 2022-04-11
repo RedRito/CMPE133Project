@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "422103266242",
+    "project_id": "cmpe133recycledex",
+    "storage_bucket": "cmpe133recycledex.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422103266242:android:92b6db4ed2a3a67c21dc5b",
+        "android_client_info": {
+          "package_name": "com.cmpe133.recycledex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422103266242-ra2u4sv3fbteqk95va0q7j2tjrifqe1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATZi9gWNeEE7kBYY0Q7MVGYSBFxJgE0FU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422103266242-ra2u4sv3fbteqk95va0q7j2tjrifqe1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
