@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlasticsPageFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp">
+
+        <TextView
+            android:id="@+id/plasticTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="140dp"
+            android:text="@string/plastics"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/plasticText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="2dp"
+            android:text="Put simply, single-use plastics are goods that are made primarily from fossil fuel–based chemicals (petrochemicals) and are meant to be disposed of right after use—often, in mere minutes. Single-use plastics are most commonly used for packaging and serviceware, such as bottles, wrappers, straws, and bags.  Though plastic—a chain of synthetic polymers, essentially—was invented in the mid-19th century, it wasn’t until the 1970s that its popularity skyrocketed. Manufacturers began replacing traditionally paper or glass staples with lighter or more durable and affordable plastic alternatives; plastic jugs replaced milk jars, for instance. Since the 1950s, 8.3 billion metric tons of plastics have been produced, and half of that in the past 15 years alone.  There are many uses for plastic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/plasticTitle" />
+
+        <TextView
+            android:id="@+id/plasticText2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="2dp"
+            android:text="Single-use plastics are a glaring example of the problems with throwaway culture. Instead of investing in quality goods that will last, we often prioritize convenience over durability and consideration of long-term impacts. Our reliance on these plastics means we are accumulating waste at a staggering rate. We produce 300 million tons of plastic each year worldwide, half of which is for single-use items. That’s nearly equivalent to the weight of the entire human population."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/plasticText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
