@@ -17,6 +17,7 @@ class HomePageActivity : AppCompatActivity() {
         val articlesFragment = ArticlesFragment()
         val homeFragment = HomeFragment()
         val profileFragment = ProfileFragment()
+        val plasticsFragment = PlasticsPageFragment()
         //val searchFragment = SearchFragment()
 
 
