@@ -21,7 +21,7 @@ class HomePageActivity : AppCompatActivity() {
 
 
         //first Fragment that is shown
-        setCurrentFragment(articlesFragment)
+        setCurrentFragment(homeFragment)
 
         bottomNavView.setOnNavigationItemSelectedListener {
             when(it.itemId){

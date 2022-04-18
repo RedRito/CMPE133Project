@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
@@ -48,6 +49,7 @@ class ProfileFragment : Fragment() {
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
         }
 
+
     }
 
 
@@ -78,7 +80,19 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //val view = inflater!!.inflate(R.layout.fragment_profile, container, false)
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+        //MUST USE onClicks in onCreateView, otherwise it will register as NULL after the onCreate!!
+        binding.btnLogout.setOnClickListener {
+            auth.signOut()
+            val intent = Intent(context, SignInActivity::class.java)
+            startActivity(intent)
+        }
+        binding.cvTotalemissions.setOnClickListener{
+            val intent = Intent(context, HomePageActivity::class.java)
+            startActivity(intent)
+        }
         return binding.root
 
     }
