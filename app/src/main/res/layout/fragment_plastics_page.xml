@@ -4,50 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlasticsPageFragment">
+    android:fillViewport="true"
+    tools:context=".PlasticsPageFragment"
+    android:background="#F5F8F0"
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    >
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="40dp">
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/plasticTitle"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="140dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
             android:text="@string/plastics"
             android:textColor="@color/black"
-            android:textSize="40sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="40sp" />
 
         <TextView
-            android:id="@+id/plasticText"
-            android:layout_width="0dp"
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="2dp"
-            android:text="Put simply, single-use plastics are goods that are made primarily from fossil fuel–based chemicals (petrochemicals) and are meant to be disposed of right after use—often, in mere minutes. Single-use plastics are most commonly used for packaging and serviceware, such as bottles, wrappers, straws, and bags.  Though plastic—a chain of synthetic polymers, essentially—was invented in the mid-19th century, it wasn’t until the 1970s that its popularity skyrocketed. Manufacturers began replacing traditionally paper or glass staples with lighter or more durable and affordable plastic alternatives; plastic jugs replaced milk jars, for instance. Since the 1950s, 8.3 billion metric tons of plastics have been produced, and half of that in the past 15 years alone.  There are many uses for plastic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plasticTitle" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:text="Plastics are a wide range of synthetic or semi-synthetic materials that use polymers as a main ingredient. Their plasticity makes it possible for plastics to be moulded, extruded or pressed into solid objects of various shapes. This adaptability, plus a wide range of other properties, such as being lightweight, durable, flexible, and inexpensive to produce, has led to its widespread use. Plastics typically are made through human industrial systems. Most modern plastics are derived from fossil fuel-based chemicals like natural gas or petroleum; however, recent industrial methods use variants made from renewable materials, such as corn or cotton derivatives."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/plasticbottles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/plasticbottles" />
 
         <TextView
-            android:id="@+id/plasticText2"
-            android:layout_width="0dp"
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="2dp"
-            android:text="Single-use plastics are a glaring example of the problems with throwaway culture. Instead of investing in quality goods that will last, we often prioritize convenience over durability and consideration of long-term impacts. Our reliance on these plastics means we are accumulating waste at a staggering rate. We produce 300 million tons of plastic each year worldwide, half of which is for single-use items. That’s nearly equivalent to the weight of the entire human population."
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plasticText" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:text="9.2 billion tonnes of plastic are estimated to have been made between 1950 and 2017. More than half this plastic has been produced since 2004. In 2020 400 million tonnes of plastic were produced. If global trends on plastic demand continue, it is estimated that by 2050 annual global plastic production will reach over 1,100 million tonnes. The success and dominance of plastics starting in the early 20th century has caused widespread environmental problems, due to their slow decomposition rate in natural ecosystems. Toward the end of the 20th century, the plastics industry promoted recycling in order to ease environmental concerns while continuing to produce virgin plastic and to push the responsibility of plastic pollution onto the consumer. The main companies producing plastics doubted the economic viability of recycling at the time, and the economic viability has never improved. Plastic collection and recycling is largely ineffective because of failures of contemporary complexity required in cleaning and sorting post-consumer plastics for effective reuse. Most plastic produced has not been reused, either being captured in landfills or persisting in the environment as plastic pollution. Plastic pollution can be found in all the world's major water bodies, for example, creating garbage patches in all of the world's oceans and contaminating terrestrial ecosystems. Of all the plastic discarded so far, some 14% has been incinerated and less than 10% has been recycled."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </LinearLayout>
 </ScrollView>
