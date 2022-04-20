@@ -32,7 +32,7 @@ class SignUpActivity : AppCompatActivity() {
 
         fun createUser(email: String?) {
             val userId = firebaseAuth.currentUser?.uid
-            val user = User(email,0.0,)
+            val user = User(email,0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
             if(userId != null)
             {
                 database.child(userId).setValue(user).addOnCompleteListener {
@@ -69,6 +69,7 @@ class SignUpActivity : AppCompatActivity() {
                             createUser(email)
                             val intent = Intent(this, HomePageActivity::class.java)
                             startActivity(intent)
+
                         }
                         else
                         {
