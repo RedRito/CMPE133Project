@@ -17,7 +17,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/plasticTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -33,7 +33,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="10dp"
-            android:text="Plastics are a wide range of synthetic or semi-synthetic materials that use polymers as a main ingredient. Their plasticity makes it possible for plastics to be moulded, extruded or pressed into solid objects of various shapes. This adaptability, plus a wide range of other properties, such as being lightweight, durable, flexible, and inexpensive to produce, has led to its widespread use. Plastics typically are made through human industrial systems. Most modern plastics are derived from fossil fuel-based chemicals like natural gas or petroleum; however, recent industrial methods use variants made from renewable materials, such as corn or cotton derivatives."
+            android:text="WHY RECYCLE PLASTIC?"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp" />
@@ -48,16 +48,5 @@
             android:adjustViewBounds="true"
             android:src="@drawable/plasticbottles" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="10dp"
-            android:text="9.2 billion tonnes of plastic are estimated to have been made between 1950 and 2017. More than half this plastic has been produced since 2004. In 2020 400 million tonnes of plastic were produced. If global trends on plastic demand continue, it is estimated that by 2050 annual global plastic production will reach over 1,100 million tonnes. The success and dominance of plastics starting in the early 20th century has caused widespread environmental problems, due to their slow decomposition rate in natural ecosystems. Toward the end of the 20th century, the plastics industry promoted recycling in order to ease environmental concerns while continuing to produce virgin plastic and to push the responsibility of plastic pollution onto the consumer. The main companies producing plastics doubted the economic viability of recycling at the time, and the economic viability has never improved. Plastic collection and recycling is largely ineffective because of failures of contemporary complexity required in cleaning and sorting post-consumer plastics for effective reuse. Most plastic produced has not been reused, either being captured in landfills or persisting in the environment as plastic pollution. Plastic pollution can be found in all the world's major water bodies, for example, creating garbage patches in all of the world's oceans and contaminating terrestrial ecosystems. Of all the plastic discarded so far, some 14% has been incinerated and less than 10% has been recycled."
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
     </LinearLayout>
 </ScrollView>
