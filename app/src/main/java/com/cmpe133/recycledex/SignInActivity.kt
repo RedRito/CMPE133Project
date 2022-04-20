@@ -46,6 +46,10 @@ class SignInActivity : AppCompatActivity() {
                 Toast.makeText(this, "Enter a username or password", Toast.LENGTH_SHORT).show()
             }
         }
+        binding.tvForgotPassword.setOnClickListener {
+            val intent = Intent(this@SignInActivity, ForgotPassActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

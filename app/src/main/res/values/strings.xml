@@ -105,4 +105,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="logout">logout</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="submit">submit</string>
 </resources>
