@@ -4,49 +4,326 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F8F0"
     android:fillViewport="true"
     tools:context=".PlasticsPageFragment"
-    android:background="#F5F8F0"
 
     >
 
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/plasticTitle"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
+            android:layout_marginStart="175dp"
+            android:layout_marginTop="57dp"
+            android:layout_marginEnd="178dp"
             android:text="@string/plastics"
-            android:textColor="@color/black"
-            android:textSize="40sp" />
+            android:textColor="#758E6F"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
+            android:id="@+id/bgColor"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginTop="130dp"
+            android:height="150dp"
+            android:background="#C8B5A2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recycleplasticQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="173dp"
             android:layout_marginTop="30dp"
-            android:layout_marginRight="10dp"
+
+            android:layout_marginEnd="180dp"
             android:text="WHY RECYCLE PLASTIC?"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/plasticTitle" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:text="Plastic recycling is extremely important, both as a method to deal with our existing waste and as a component of both circular economy and zero-waste systems that aim to reduce waste generation and increase sustainability."
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recycleplasticQ" />
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="175dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="178dp"
+            android:text="PLASTIC RECYCLING PROCESS STEPS"
+            android:textColor="#758E6F"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <ImageView
-            android:id="@+id/plasticbottles"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/plasticbottles" />
+            android:id="@+id/imageView2"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="82dp"
+            android:src="@drawable/collection_and_distribution_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.052"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:text="The first step in the mechanical recycling process is the collection of post-consumer materials from homes, businesses, and institutions."
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/collectanddistribute" />
+
+        <TextView
+            android:id="@+id/collectanddistribute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="94dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="126dp"
+            android:text="Collection and Distribution"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/sortandcat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Sorting and Categorizing"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/washing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="222dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="127dp"
+            android:text="Washing"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="269dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/sorting_categorizing_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:text="There are several types of plastics that need to be sorted. This is done by machines at the recycling plant and is an important step to increase the efficiency of plants and avoid the contamination of end products."
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sortandcat" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/washing_img"
+            app:layout_constraintEnd_toStartOf="@+id/textView11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="40dp"
+            android:text="Washing is a crucial step in the plastic recycling process since it removes some of the impurities that can impede the operation, or completely ruin a batch of recycled plastic."
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/washing" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/shredding_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/shredding" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:text="The plastic is then fed into shredders, which break it down into much smaller pieces. These smaller pieces, unlike formed plastic products, can be processed in the next stages for reuse."
+            app:layout_constraintEnd_toStartOf="@+id/imageView6"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shredding" />
+
+        <TextView
+            android:id="@+id/shredding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="63dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="282dp"
+            android:text="Shredding"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        <TextView
+            android:id="@+id/idandsep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="30dp"
+            android:text="Identification and separation of plastics "
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:text="Here, the plastic pieces are tested for their class and quality. First, they are segregated based on density, which is tested by floating the particles of plastic in a container of water. This is followed by a test for what is known as the “air classification”, which determines the thickness of the plastic pieces."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/idandsep" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="71dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/identification_separation_img"
+            app:layout_constraintEnd_toStartOf="@+id/textView17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/extrudeandcomp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="215dp"
+            android:text=" Extruding + compounding"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/extruding_compounding_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/extrudeandcomp"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:text="This final plastic recycling process step is where the particles of shredded plastic are transformed into a usable product for manufactures. The shredded plastic is melted and crushed together to form pellets."
+            app:layout_constraintEnd_toStartOf="@+id/imageView8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/extrudeandcomp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </ScrollView>
