@@ -20,8 +20,8 @@
 
             android:layout_height="wrap_content"
             android:layout_marginStart="175dp"
-            android:layout_marginTop="57dp"
-            android:layout_marginEnd="178dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="175dp"
             android:text="@string/plastics"
             android:textColor="#758E6F"
             android:textSize="40sp"
@@ -45,7 +45,7 @@
             android:id="@+id/recycleplasticQ"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="173dp"
+            android:layout_marginStart="180dp"
             android:layout_marginTop="30dp"
 
             android:layout_marginEnd="180dp"
