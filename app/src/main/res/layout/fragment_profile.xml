@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ProfileFragment"
     android:fillViewport="true">
@@ -25,22 +25,23 @@
             android:id="@+id/tvEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="80dp"
             android:gravity="center"
             android:text="Email"
-            android:textSize="36dp"
+            android:textSize="36sp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvEmiss"
+            android:id="@+id/tvProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="144dp"
             android:layout_marginTop="52dp"
-            android:text="Emiss"
-            android:textSize="24dp"
+            android:text="Your Profile"
+            android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
 
             app:layout_constraintTop_toBottomOf="@id/tvEmail" />
@@ -80,14 +81,159 @@
                     android:layout_height="80dp"
                     android:gravity="center_vertical"
                     android:text="Emission numbers"
-                    android:textSize="25dp"
+                    android:textSize="25sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tv_emiss2"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_allinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            app:layout_constraintTop_toBottomOf="@id/cv_totalemissions">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <TextView
+                    android:id="@+id/tv_plasticsInfo"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="Plastics"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_plasticAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Plastic Amount"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_plasticsInfo"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_woodInfo"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Wood"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_plasticsInfo" />
+
+                <TextView
+                    android:id="@+id/tv_woodAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Wood Amount"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="100dp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_woodInfo"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_plasticAmount" />
+                <TextView
+                    android:id="@+id/tv_metalInfo"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Metal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_woodInfo" />
+
+                <TextView
+                    android:id="@+id/tv_metalAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Metal Amount"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="100dp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_metalInfo"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_woodAmount" />
+                <TextView
+                    android:id="@+id/tv_electInfo"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Electrical"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_metalInfo" />
+
+                <TextView
+                    android:id="@+id/tv_electAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Electronic Amount"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="100dp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_electInfo"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_metalAmount" />
+                <TextView
+                    android:id="@+id/tv_clothesInfo"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Clothes"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_electInfo" />
+
+                <TextView
+                    android:id="@+id/tv_clothesAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Clothes Amount"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="100dp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_clothesInfo"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_electAmount" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginTop="600dp"
+            android:text="@string/logout"
+            android:textStyle="bold"
+            android:backgroundTint="@color/mildishGreen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_totalemissions" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

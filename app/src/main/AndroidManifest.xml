@@ -10,19 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleAppToDoList">
         <activity
-            android:name="com.cmpe133.recycledex.HomePageActivity"
+            android:name=".ForgotPassActivity"
             android:exported="false" />
         <activity
-            android:name="com.cmpe133.recycledex.SignInActivity"
+            android:name=".HomePageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignInActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:label="@string/title_activity_sign_in"
             android:theme="@style/Theme.SimpleAppToDoList.Fullscreen" />
         <activity
-            android:name="com.cmpe133.recycledex.SignUpActivity"
+            android:name=".SignUpActivity"
             android:exported="false" />
         <activity
-            android:name="com.cmpe133.recycledex.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

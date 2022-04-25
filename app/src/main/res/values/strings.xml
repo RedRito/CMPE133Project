@@ -15,6 +15,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="plastics">PLASTICS</string>
+    <string name="metal">METAL</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -104,4 +105,7 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="logout">logout</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="submit">submit</string>
 </resources>
