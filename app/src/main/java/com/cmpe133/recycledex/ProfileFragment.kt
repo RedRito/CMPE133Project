@@ -63,9 +63,9 @@ class ProfileFragment : Fragment() {
                 val emiss = it.child("savedemissions").value
                 val plastic = it.child("plasticSaved").value
                 val elect = it.child("electSaved").value
-                val wood = it.child("woodSaved").value
+                val paper = it.child("paperSaved").value
                 val metal = it.child("metalSaved").value
-                val clothes = it.child("clothesSaved").value
+                val glass = it.child("glassSaved").value
                 var trimEmail = email.toString()
                 if(email.toString().length > 10)
                 {
@@ -74,10 +74,10 @@ class ProfileFragment : Fragment() {
                 binding.tvEmail.text = trimEmail
                 binding.tvTotalemiss.text = emiss.toString() + " kg"
                 binding.tvPlasticAmount.text = plastic.toString() + " kg"
-                binding.tvWoodAmount.text = wood.toString() + " kg"
+                binding.tvWoodAmount.text = paper.toString() + " kg"
                 binding.tvMetalAmount.text = metal.toString() + " kg"
                 binding.tvElectAmount.text = elect.toString() + " kg"
-                binding.tvClothesAmount.text = clothes.toString() + " kg"
+                binding.tvClothesAmount.text = glass.toString() + " kg"
             }
             else
             {
@@ -105,7 +105,7 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
         binding.cvTotalemissions.setOnClickListener{
-            val intent = Intent(context, HomePageActivity::class.java)
+            val intent = Intent(context, EmissCalActivity::class.java)
             startActivity(intent)
         }
         return binding.root

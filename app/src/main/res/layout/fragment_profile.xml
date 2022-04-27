@@ -130,7 +130,7 @@
                     android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:gravity="center"
-                    android:text="Wood"
+                    android:text="Paper"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="50dp"
                     android:textSize="24sp"
@@ -143,7 +143,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="Wood Amount"
+                    android:text="Paper Amount"
                     android:textSize="20sp"
                     android:layout_marginLeft="100dp"
                     app:layout_constraintStart_toEndOf="@+id/tv_woodInfo"
@@ -199,7 +199,7 @@
                     android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:gravity="center"
-                    android:text="Clothes"
+                    android:text="Glass"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="50dp"
                     android:textSize="24sp"
@@ -212,7 +212,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="Clothes Amount"
+                    android:text="Glass Amount"
                     android:textSize="20sp"
                     android:layout_marginLeft="100dp"
                     app:layout_constraintStart_toEndOf="@+id/tv_clothesInfo"
@@ -221,6 +221,19 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Favorite Locations"
+            android:textColor="@color/mildishGreen"
+            android:textSize="16sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_allinfo"
+            />
+
         <Button
             android:id="@+id/btn_logout"
             android:layout_width="wrap_content"
