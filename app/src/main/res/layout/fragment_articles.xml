@@ -31,8 +31,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cvItem"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    android:onClick="switchPage"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    android:layout_margin="16dp">
+    <!--> android:onClick="switchPage" -->
+
     <!--
     android:layout_marginTop="1dp"
     android:layout_marginBottom="663dp"
@@ -42,7 +45,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp
+">
+
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivArticleImage"

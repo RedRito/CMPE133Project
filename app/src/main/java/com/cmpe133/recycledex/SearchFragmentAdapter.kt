@@ -17,8 +17,7 @@ class SearchFragmentAdapter(private val articleList : ArrayList<Article>) : Recy
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         TODO("Not yet implemented")
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.fragment_articles, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.fragment_articles, parent, false)
         return MyViewHolder(itemView)
     }
 
@@ -32,6 +31,7 @@ class SearchFragmentAdapter(private val articleList : ArrayList<Article>) : Recy
 
     override fun getItemCount(): Int {
         TODO("Not yet implemented")
-        return articleList.size
+        return 10
     }
+
 }

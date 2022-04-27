@@ -22,7 +22,7 @@ class HomePageActivity : AppCompatActivity() {
         val paperFragment = PaperPageFragment()
         val glassFragment = GlassPageFragment()
         val electronicFragment = ElectronicsPageFragment()
-        val searchFragment = SearchFragment()
+        val searchFragment = SearchingFragment()
 
 
         //first Fragment that is shown
