@@ -82,6 +82,27 @@ class SearchFragment : Fragment(R.layout.search_veiw_fragment) {
                 TODO("Not yet implemented")
             }
         })
+        /**
+        database = FirebaseDatabase.getInstance().getReference("Articles")
+        database.child(id).get().addOnSuccessListener {
+        if(it.exists())
+        {
+        val title = it.child("userName").value
+        val description = it.child("description").value
+        val category = it.child("category").value
+        val author = it.child("author").value
+        binding.tvArticleTitle.text = title.toString()
+        binding.tvArticleDescription.text = description.toString()
+        binding.tvArticleAuthor.text = author.toString()
+        }
+        else
+        {
+        Toast.makeText(context, "Article does not exist", Toast.LENGTH_SHORT).show()
+        }
+        }.addOnFailureListener{
+        Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
+        }
+         **/
     }
 }
 
