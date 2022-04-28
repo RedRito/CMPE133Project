@@ -2,6 +2,7 @@ package com.cmpe133.recycledex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -64,31 +65,47 @@ class EmissCalActivity : AppCompatActivity() {
             when {
                 inputed.equals("Weight") -> {
                     var amountString: String = binding.names.text.toString().trim()
-                    var amount = amountString.toDouble()
+                    if(amountString.isNullOrBlank())
+                    {
+                        Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
 
-                    when(choice){
-                        "Plastic" -> plasticW(amount)
-                        "Paper" -> print("hello")
-                        "Metal" -> print("hello")
-                        "Electronics" -> print("hello")
-                        "Glass" -> print("hello")
-                        else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
                     }
+                    else
+                    {
+                        var amount = amountString.toDouble()
+
+                        when(choice){
+                            "Plastic" -> plasticW(amount)
+                            "Paper" -> paperW(amount)
+                            "Metal" -> metalW(amount)
+                            "Electronics" -> electW(amount)
+                            "Glass" -> glassW(amount)
+                            else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
 
                 }
                 inputed.equals("Amount") -> {
                     var amountString: String = binding.names.text.toString().trim()
-                    var amount = amountString.toDouble()
-                    when(choice)
+                    if(amountString.isNullOrBlank())
                     {
-                        "Plastic" -> plasticA(amount)
-                        "Paper" -> print("hello")
-                        "Metal" -> print("hello")
-                        "Electronics" -> print("hello")
-                        "Glass" -> print("hello")
-                        else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
-                    }
+                        Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
 
+                    }
+                    else
+                    {
+                        var amount = amountString.toDouble()
+                        when(choice)
+                        {
+                            "Plastic" -> plasticA(amount)
+                            "Paper" -> paperA(amount)
+                            "Metal" -> metalA(amount)
+                            "Electronics" -> electA(amount)
+                            "Glass" -> glassA(amount)
+                            else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
+                        }
+                    }
                 }
                 else -> {
                     Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
@@ -109,69 +126,170 @@ class EmissCalActivity : AppCompatActivity() {
         var total = plastic * weight
         updateUserData("plasticSaved",total)
     }
-    private fun paperW(){
+    private fun paperW(weight: Double){
+        if(weight < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var paper = .5
+        var total = paper * weight
+        updateUserData("paperSaved",total)
 
     }
-    private fun metalW(){
+    private fun metalW(weight: Double){
+        if(weight < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var metal = 2.0
+        var total = metal * weight
+        updateUserData("metalSaved",total)
+    }
+    private fun electW(weight: Double){
+        if(weight < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var elect = 10.0
+        var total = elect * weight
+        updateUserData("electSaved",total)
 
     }
-    private fun electW(){
-
-    }
-    private fun glassW(){
-
+    private fun glassW(weight: Double){
+        if(weight < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var glass = 3.0
+        var total = glass * weight
+        updateUserData("glassSaved",total)
     }
 
 
     private fun plasticA(number: Double){
         if(number < 1)
         {
-
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
             return
         }
         // 1 plastic bag = x kg amount of carbon emission
         val plastic = .5
         var total = plastic * number
-
-
-    }
-    private fun paperA(){
+        updateUserData("plasticSaved",total)
 
     }
-    private fun metalA(){
+    private fun paperA(number: Double){
+        if(number < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var paper = .5
+        var total = paper * number
+        updateUserData("paperSaved",total)
 
     }
-    private fun electA(){
+    private fun metalA(number: Double){
+        if(number < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var metal = 2.0
+        var total = metal * number
+        updateUserData("metalSaved",total)
 
     }
-    private fun glassA(){
+    private fun electA(number: Double){
+        if(number < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var elect = 10.0
+        var total = elect * number
+        updateUserData("electSaved",total)
+
+    }
+    private fun glassA(number: Double){
+        if(number < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var glass = 3.0
+        var total = glass * number
+        updateUserData("glassSaved",total)
 
     }
     private fun updateUserData(type : String, value: Double){
         database = FirebaseDatabase.getInstance().getReference("Users")
 
-        val user = mapOf<String, Double>(
-            type to value
-        )
-        database.child(uid).updateChildren(user).addOnSuccessListener {
-            Toast.makeText(this@EmissCalActivity, "Success!!", Toast.LENGTH_SHORT).show()
-        }.addOnFailureListener{
-            Toast.makeText(this@EmissCalActivity, "Error", Toast.LENGTH_SHORT).show()
+
+        fun mapAndUpdate(emiss: Double, typeValue: Double){
+            var sum = 0.0
+            //Log.println(Log.ASSERT, "typeValue before", typeValue.toString())
+            //Log.println(Log.ASSERT, "Value before", value.toString())
+
+            sum = typeValue + value
+            var emission = emiss + value
+            //Log.println(Log.ASSERT, "emiss after", emission.toString())
+
+            val user = mapOf<String, Double>(
+                "savedemissions" to emission,
+                type to sum
+            )
+            database.child(uid).updateChildren(user).addOnSuccessListener {
+                Toast.makeText(this@EmissCalActivity, "Success!!", Toast.LENGTH_SHORT).show()
+            }.addOnFailureListener{
+                Toast.makeText(this@EmissCalActivity, "Error", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
 
-    private fun getUserData(){
-        database.child(uid).addValueEventListener(object : ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                user = snapshot.getValue(User::class.java)!!
+
+        database.child(uid).get().addOnSuccessListener {
+            val emiss = it.child("savedemissions").value.toString().toDouble()
+            val plastic = it.child("plasticSaved").value.toString().toDouble()
+            val elect = it.child("electSaved").value.toString().toDouble()
+            val paper = it.child("paperSaved").value.toString().toDouble()
+            val metal = it.child("metalSaved").value.toString().toDouble()
+            val glass = it.child("glassSaved").value.toString().toDouble()
+            when(type)
+            {
+                "plasticSaved" -> {
+                    mapAndUpdate(emiss, plastic)
+                }
+                "paperSaved" -> {
+                    mapAndUpdate(emiss, paper)
+                }
+                "metalSaved" -> {
+                    mapAndUpdate(emiss, metal)
+                }
+                "electSaved" -> {
+                    mapAndUpdate(emiss, elect)
+                }
+                "glassSaved" -> {
+                    mapAndUpdate(emiss, glass)
+                }
+                else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
 
             }
+        }
 
-            override fun onCancelled(error: DatabaseError) {
 
-            }
-        })
+
+
+
+
+
+
     }
+
+
     }
 
 
