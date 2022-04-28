@@ -68,10 +68,10 @@ class EmissCalActivity : AppCompatActivity() {
 
                     when(choice){
                         "Plastic" -> plasticW(amount)
-                        "Paper" -> print("hello")
-                        "Metal" -> print("hello")
-                        "Electronics" -> print("hello")
-                        "Glass" -> print("hello")
+                        "Paper" -> paperW(amount)
+                        "Metal" -> metalW(amount)
+                        "Electronics" -> electW(amount)
+                        "Glass" -> glassW(amount)
                         else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
                     }
 
@@ -82,10 +82,10 @@ class EmissCalActivity : AppCompatActivity() {
                     when(choice)
                     {
                         "Plastic" -> plasticA(amount)
-                        "Paper" -> print("hello")
-                        "Metal" -> print("hello")
-                        "Electronics" -> print("hello")
-                        "Glass" -> print("hello")
+                        "Paper" -> paperA(amount)
+                        "Metal" -> metalA(amount)
+                        "Electronics" -> electA(amount)
+                        "Glass" -> glassA(amount)
                         else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
                     }
 
@@ -109,42 +109,104 @@ class EmissCalActivity : AppCompatActivity() {
         var total = plastic * weight
         updateUserData("plasticSaved",total)
     }
-    private fun paperW(){
+    private fun paperW(weight: Double){
+        if(weight < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var paper = .5
+        var total = paper * weight
+        updateUserData("paperSaved",total)
 
     }
-    private fun metalW(){
+    private fun metalW(weight: Double){
+        if(weight < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var metal = 2.0
+        var total = metal * weight
+        updateUserData("metalSaved",total)
+    }
+    private fun electW(weight: Double){
+        if(weight < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var elect = 10.0
+        var total = elect * weight
+        updateUserData("electSaved",total)
 
     }
-    private fun electW(){
-
-    }
-    private fun glassW(){
-
+    private fun glassW(weight: Double){
+        if(weight < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var glass = 3.0
+        var total = glass * weight
+        updateUserData("glassSaved",total)
     }
 
 
     private fun plasticA(number: Double){
         if(number < 1)
         {
-
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
             return
         }
         // 1 plastic bag = x kg amount of carbon emission
         val plastic = .5
         var total = plastic * number
-
-
-    }
-    private fun paperA(){
+        updateUserData("plasticSaved",total)
 
     }
-    private fun metalA(){
+    private fun paperA(number: Double){
+        if(number < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var paper = .5
+        var total = paper * number
+        updateUserData("paperSaved",total)
 
     }
-    private fun electA(){
+    private fun metalA(number: Double){
+        if(number < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var metal = 2.0
+        var total = metal * number
+        updateUserData("metalSaved",total)
 
     }
-    private fun glassA(){
+    private fun electA(number: Double){
+        if(number < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var elect = 10.0
+        var total = elect * number
+        updateUserData("electSaved",total)
+
+    }
+    private fun glassA(number: Double){
+        if(number < 1)
+        {
+            Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+        var glass = 3.0
+        var total = glass * number
+        updateUserData("glassSaved",total)
 
     }
     private fun updateUserData(type : String, value: Double){
