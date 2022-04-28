@@ -8,19 +8,22 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.cmpe133.recycledex.databinding.ActivityEmissCalBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 class EmissCalActivity : AppCompatActivity() {
     private  lateinit var  binding: ActivityEmissCalBinding
     private  lateinit var  database: DatabaseReference
     private  lateinit var  firebaseAuth: FirebaseAuth
+    private  lateinit var  uid: String
+    private lateinit var user: User
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEmissCalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference("Users")
+        val currentUser = firebaseAuth.currentUser
+        uid = currentUser?.uid.toString()
 
         val items = resources.getStringArray(R.array.mats_array)
         val inputChoice = resources.getStringArray(R.array.choice_array)
@@ -57,45 +60,38 @@ class EmissCalActivity : AppCompatActivity() {
                 }
             }
         }
-        if(choice.isNullOrBlank() || inputed.isNullOrBlank())
-        {
-            Toast.makeText(this@EmissCalActivity, "No Input", Toast.LENGTH_SHORT).show()
-        }
-        else
-        {
-            binding.btnSubmitAmount.setOnClickListener {
-                when {
-                    inputed.equals("Weight") -> {
-                        var amountString: String = binding.names.text.toString().trim()
-                        var amount = amountString.toDouble()
+        binding.btnSubmitAmount.setOnClickListener {
+            when {
+                inputed.equals("Weight") -> {
+                    var amountString: String = binding.names.text.toString().trim()
+                    var amount = amountString.toDouble()
 
-                        when(choice){
-                            "Plastic" -> plasticW(amount)
-                            "Paper" -> print("hello")
-                            "Metal" -> print("hello")
-                            "Electronics" -> print("hello")
-                            "Glass" -> print("hello")
-                            else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
-                        }
+                    when(choice){
+                        "Plastic" -> plasticW(amount)
+                        "Paper" -> print("hello")
+                        "Metal" -> print("hello")
+                        "Electronics" -> print("hello")
+                        "Glass" -> print("hello")
+                        else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
+                    }
 
+                }
+                inputed.equals("Amount") -> {
+                    var amountString: String = binding.names.text.toString().trim()
+                    var amount = amountString.toDouble()
+                    when(choice)
+                    {
+                        "Plastic" -> plasticA(amount)
+                        "Paper" -> print("hello")
+                        "Metal" -> print("hello")
+                        "Electronics" -> print("hello")
+                        "Glass" -> print("hello")
+                        else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
                     }
-                    inputed.equals("Amount") -> {
-                        var amountString: String = binding.names.text.toString().trim()
-                        var amount = amountString.toDouble()
-                        when(choice)
-                        {
-                            "Plastic" -> plasticA(amount)
-                            "Paper" -> print("hello")
-                            "Metal" -> print("hello")
-                            "Electronics" -> print("hello")
-                            "Glass" -> print("hello")
-                            else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
-                        }
 
-                    }
-                    else -> {
-                        Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
-                    }
+                }
+                else -> {
+                    Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -111,10 +107,7 @@ class EmissCalActivity : AppCompatActivity() {
         // 1kg of plastic = X kg amount of carbon emission
         val plastic = 1.7
         var total = plastic * weight
-
-
-
-    }
+        updateUserData("plasticSaved",total)
     }
     private fun paperW(){
 
@@ -140,6 +133,7 @@ class EmissCalActivity : AppCompatActivity() {
         val plastic = .5
         var total = plastic * number
 
+
     }
     private fun paperA(){
 
@@ -153,6 +147,33 @@ class EmissCalActivity : AppCompatActivity() {
     private fun glassA(){
 
     }
+    private fun updateUserData(type : String, value: Double){
+        database = FirebaseDatabase.getInstance().getReference("Users")
+
+        val user = mapOf<String, Double>(
+            type to value
+        )
+        database.child(uid).updateChildren(user).addOnSuccessListener {
+            Toast.makeText(this@EmissCalActivity, "Success!!", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener{
+            Toast.makeText(this@EmissCalActivity, "Error", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun getUserData(){
+        database.child(uid).addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                user = snapshot.getValue(User::class.java)!!
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+    }
+    }
+
 
 
 
