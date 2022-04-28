@@ -2,6 +2,7 @@ package com.cmpe133.recycledex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -64,31 +65,47 @@ class EmissCalActivity : AppCompatActivity() {
             when {
                 inputed.equals("Weight") -> {
                     var amountString: String = binding.names.text.toString().trim()
-                    var amount = amountString.toDouble()
+                    if(amountString.isNullOrBlank())
+                    {
+                        Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
 
-                    when(choice){
-                        "Plastic" -> plasticW(amount)
-                        "Paper" -> paperW(amount)
-                        "Metal" -> metalW(amount)
-                        "Electronics" -> electW(amount)
-                        "Glass" -> glassW(amount)
-                        else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
                     }
+                    else
+                    {
+                        var amount = amountString.toDouble()
+
+                        when(choice){
+                            "Plastic" -> plasticW(amount)
+                            "Paper" -> paperW(amount)
+                            "Metal" -> metalW(amount)
+                            "Electronics" -> electW(amount)
+                            "Glass" -> glassW(amount)
+                            else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
 
                 }
                 inputed.equals("Amount") -> {
                     var amountString: String = binding.names.text.toString().trim()
-                    var amount = amountString.toDouble()
-                    when(choice)
+                    if(amountString.isNullOrBlank())
                     {
-                        "Plastic" -> plasticA(amount)
-                        "Paper" -> paperA(amount)
-                        "Metal" -> metalA(amount)
-                        "Electronics" -> electA(amount)
-                        "Glass" -> glassA(amount)
-                        else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
-                    }
+                        Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
 
+                    }
+                    else
+                    {
+                        var amount = amountString.toDouble()
+                        when(choice)
+                        {
+                            "Plastic" -> plasticA(amount)
+                            "Paper" -> paperA(amount)
+                            "Metal" -> metalA(amount)
+                            "Electronics" -> electA(amount)
+                            "Glass" -> glassA(amount)
+                            else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
+                        }
+                    }
                 }
                 else -> {
                     Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
@@ -212,28 +229,67 @@ class EmissCalActivity : AppCompatActivity() {
     private fun updateUserData(type : String, value: Double){
         database = FirebaseDatabase.getInstance().getReference("Users")
 
-        val user = mapOf<String, Double>(
-            type to value
-        )
-        database.child(uid).updateChildren(user).addOnSuccessListener {
-            Toast.makeText(this@EmissCalActivity, "Success!!", Toast.LENGTH_SHORT).show()
-        }.addOnFailureListener{
-            Toast.makeText(this@EmissCalActivity, "Error", Toast.LENGTH_SHORT).show()
+
+        fun mapAndUpdate(emiss: Double, typeValue: Double){
+            var sum = 0.0
+            //Log.println(Log.ASSERT, "typeValue before", typeValue.toString())
+            //Log.println(Log.ASSERT, "Value before", value.toString())
+
+            sum = typeValue + value
+            var emission = emiss + value
+            //Log.println(Log.ASSERT, "emiss after", emission.toString())
+
+            val user = mapOf<String, Double>(
+                "savedemissions" to emission,
+                type to sum
+            )
+            database.child(uid).updateChildren(user).addOnSuccessListener {
+                Toast.makeText(this@EmissCalActivity, "Success!!", Toast.LENGTH_SHORT).show()
+            }.addOnFailureListener{
+                Toast.makeText(this@EmissCalActivity, "Error", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
 
-    private fun getUserData(){
-        database.child(uid).addValueEventListener(object : ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                user = snapshot.getValue(User::class.java)!!
+
+        database.child(uid).get().addOnSuccessListener {
+            val emiss = it.child("savedemissions").value.toString().toDouble()
+            val plastic = it.child("plasticSaved").value.toString().toDouble()
+            val elect = it.child("electSaved").value.toString().toDouble()
+            val paper = it.child("paperSaved").value.toString().toDouble()
+            val metal = it.child("metalSaved").value.toString().toDouble()
+            val glass = it.child("glassSaved").value.toString().toDouble()
+            when(type)
+            {
+                "plasticSaved" -> {
+                    mapAndUpdate(emiss, plastic)
+                }
+                "paperSaved" -> {
+                    mapAndUpdate(emiss, paper)
+                }
+                "metalSaved" -> {
+                    mapAndUpdate(emiss, metal)
+                }
+                "electSaved" -> {
+                    mapAndUpdate(emiss, elect)
+                }
+                "glassSaved" -> {
+                    mapAndUpdate(emiss, glass)
+                }
+                else -> Toast.makeText(this@EmissCalActivity, "Incorrect input", Toast.LENGTH_SHORT).show()
 
             }
+        }
 
-            override fun onCancelled(error: DatabaseError) {
 
-            }
-        })
+
+
+
+
+
+
     }
+
+
     }
 
 
