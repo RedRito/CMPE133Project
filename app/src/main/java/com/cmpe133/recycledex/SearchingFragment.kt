@@ -48,7 +48,7 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
         articleRecyclerView = rootView.findViewById(R.id.rvsearch)
         articleRecyclerView.layoutManager = LinearLayoutManager(context)
         articleRecyclerView.setHasFixedSize(true)
-        articleArrayList = arrayListOf<Article>()``
+        articleArrayList = arrayListOf<Article>()
         //_binding = FragmentArticlesBinding.inflate(inflater, container, false) //mirrored off of profilefragment.kt
         // MUST USE onClicks in onCreateView, otherwise it will register as NULL after the onCreate!!
         // when you click on card, should redirects to website (right now to homepage)
