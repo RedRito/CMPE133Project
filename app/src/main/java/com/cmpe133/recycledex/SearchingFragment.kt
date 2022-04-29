@@ -1,11 +1,13 @@
 package com.cmpe133.recycledex
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cmpe133.recycledex.databinding.FragmentArticlesBinding
@@ -27,7 +29,7 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var _binding: FragmentArticlesBinding? = null //mirrored off of profilefragment.kt
+    //private var _binding: FragmentArticlesBinding? = null //mirrored off of profilefragment.kt
     private lateinit var database: DatabaseReference
     private lateinit var articleRecyclerView: RecyclerView
     private lateinit var articleArrayList: ArrayList<Article>
@@ -46,7 +48,7 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
         articleRecyclerView = rootView.findViewById(R.id.rvsearch)
         articleRecyclerView.layoutManager = LinearLayoutManager(context)
         articleRecyclerView.setHasFixedSize(true)
-        articleArrayList = arrayListOf<Article>()
+        articleArrayList = arrayListOf<Article>()``
         //_binding = FragmentArticlesBinding.inflate(inflater, container, false) //mirrored off of profilefragment.kt
         // MUST USE onClicks in onCreateView, otherwise it will register as NULL after the onCreate!!
         // when you click on card, should redirects to website (right now to homepage)
