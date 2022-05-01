@@ -9,4 +9,27 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+    <string-array name="mats_array">
+        <item>Plastic</item>
+        <item>Paper</item>
+        <item>Metal</item>
+
+        <item>Electronics</item>
+        <item>Glass</item>
+    </string-array>
+    <string-array name="choice_array">
+        <item>Weight</item>
+        <item>Amount</item>
+    </string-array>
+
 </resources>

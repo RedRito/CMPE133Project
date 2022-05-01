@@ -30,7 +30,7 @@ class HomePageActivity : AppCompatActivity() {
 
         bottomNavView.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.home  -> setCurrentFragment(electronicFragment)
+                R.id.home  -> setCurrentFragment(metalsFragment)
                 R.id.articles -> setCurrentFragment(articlesFragment)
                 R.id.search -> setCurrentFragment(searchFragment)
                 R.id.profile -> setCurrentFragment(profileFragment)

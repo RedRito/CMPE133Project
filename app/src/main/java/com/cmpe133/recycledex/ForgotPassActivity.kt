@@ -27,7 +27,7 @@ class ForgotPassActivity : AppCompatActivity() {
                     Toast.makeText(this, "Email sent successfully", Toast.LENGTH_SHORT).show()
                     finish()
                 }
-                    else
+                else
                 {
                     Toast.makeText(this, task.exception!!.message.toString(), Toast.LENGTH_SHORT).show()
                 }
