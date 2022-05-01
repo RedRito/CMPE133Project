@@ -2,6 +2,7 @@ package com.cmpe133.recycledex
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -72,16 +73,31 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
                     for (ArticleSnapshot in snapshot.children) {
 
                         val article = ArticleSnapshot.getValue(Article::class.java)
+
                         articleArrayList.add(article!!)
 
                     }
-                    articleRecyclerView.adapter = SearchFragmentAdapter(articleArrayList)
+
+                    val adapter = SearchFragmentAdapter(articleArrayList)
+                    articleRecyclerView.adapter = adapter
+                    adapter.setOnItemClickListener(object : SearchFragmentAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+
+                            val link = articleArrayList[position].link
+                            val i = Intent(Intent.ACTION_VIEW)
+                            i.data = Uri.parse(link)
+                            startActivity(i)
+                            //Toast.makeText(context, articleArrayList[position].toString(), Toast.LENGTH_SHORT).show()
+
+                        }
+
+                    })
                 }
 
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+
             }
         })
 /**

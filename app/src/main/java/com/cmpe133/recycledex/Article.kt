@@ -7,7 +7,5 @@ data class Article(var title: String = "",
                    var link: String = "",
                    )
 {
-    override fun toString(): String {
-        return "$title $author $category $description"
-    }
+
 }
