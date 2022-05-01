@@ -245,6 +245,7 @@ class EmissCalActivity : AppCompatActivity() {
             )
             database.child(uid).updateChildren(user).addOnSuccessListener {
                 Toast.makeText(this@EmissCalActivity, "Success!!", Toast.LENGTH_SHORT).show()
+                finish()
             }.addOnFailureListener{
                 Toast.makeText(this@EmissCalActivity, "Error", Toast.LENGTH_SHORT).show()
             }
