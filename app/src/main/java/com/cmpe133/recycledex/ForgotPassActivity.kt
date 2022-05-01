@@ -18,7 +18,6 @@ class ForgotPassActivity : AppCompatActivity() {
         binding = ActivityForgotPassBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
-
         binding.btnSubmit2.setOnClickListener {
             val email = binding.tvEmailFillIn.text.toString().trim()
             if(email.isNotEmpty())
