@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cmpe133.recycledex.databinding.FragmentArticlesBinding
@@ -29,12 +30,13 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    //private var _binding: FragmentArticlesBinding? = null //mirrored off of profilefragment.kt
+    private var _binding: FragmentArticlesBinding? = null //mirrored off of profilefragment.kt
     private lateinit var database: DatabaseReference
     private lateinit var articleRecyclerView: RecyclerView
     private lateinit var articleArrayList: ArrayList<Article>
+    //private val = getItemId()
     //private lateinit var article: Article
-    //private val binding get() = _binding!! //mirrored off of profilefragment.kt
+    private val binding get() = _binding!! //mirrored off of profilefragment.kt
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getArticleData()
@@ -82,7 +84,7 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
                 TODO("Not yet implemented")
             }
         })
-        /**
+/**
         database = FirebaseDatabase.getInstance().getReference("Articles")
         database.child(id).get().addOnSuccessListener {
         if(it.exists())
@@ -102,17 +104,8 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
         }.addOnFailureListener{
         Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
         }
-         **/
+**/
     }
-    /**
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-    **/
 
     companion object {
         /**
