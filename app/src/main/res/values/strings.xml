@@ -8,6 +8,14 @@
     <string name="confirmpassword">CONFIRM PASSWORD</string>
     <string name="signup2">SIGN UP</string>
     <string name="guest">Continue as a guest</string>
+    <string name="suggestedarticle"><font size="20">SUGGESTED ARTICLE</font></string>
+    <string name="recentsearch"><font size="15">MOST RECENT SEARCHES BY CATEGORY</font></string>
+    <string name="calculations"><font size="20">YOU HAVE SAVED</font></string>
+    <string name="favoritelocations"><font size="20">FAVORITE LOCATIONS</font></string>
+    <string name="favoritelocation1"><font size="20">LOCATION 1 HERE</font></string>
+    <string name="favoritelocation2"><font size="20">LOCATION 2 HERE</font></string>
+    <string name="favoritelocation3"><font size="20">LOCATION 3 HERE</font></string>
+    <string name="desc">black location icon</string>
     <string name="title_activity_sign_in">SignInActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
