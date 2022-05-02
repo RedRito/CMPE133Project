@@ -50,6 +50,7 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
         articleRecyclerView.setHasFixedSize(true)
         articleArrayList = arrayListOf<Article>()
         articleSearchedList = arrayListOf<Article>()
+        var topText: TextView = rootView.findViewById(R.id.tvSuggestedArticles)
         getArticleData()
         val queryText: SearchView = rootView.findViewById(R.id.svcvFragment)
         queryText.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
@@ -62,7 +63,9 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
                 {
                     Toast.makeText(context, articles.title, Toast.LENGTH_SHORT).show()
                 }
+                topText.text = "Results"
                 setArticleList()
+
 
                 return true
             }
@@ -100,6 +103,7 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
     private fun setArticleList(){
         val adapter = SearchFragmentAdapter(articleSearchedList)
         articleRecyclerView.adapter = adapter
+
         adapter.setOnItemClickListener(object : SearchFragmentAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
 
