@@ -91,11 +91,9 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
             val description = articles.description.lowercase()
             val cate = articles.category.lowercase()
             val author = articles.author.lowercase()
-            val article = arrayOf(title, description, cate, author)
-            if(article.contains(query.lowercase()))
+            val query = query.lowercase()
+            if(title.contains(query) || description.contains(query) || cate.contains(query) || author.contains(query))
             {
-               // Toast.makeText(context, articles.title, Toast.LENGTH_SHORT).show()
-
                    articleSearchedList.add(articles)
             }
         }
