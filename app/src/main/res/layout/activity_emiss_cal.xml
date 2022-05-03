@@ -71,6 +71,7 @@
       android:layout_marginTop="10dp"
       android:ems="15"
       android:hint="Enter Amount"
+      android:inputType="numberDecimal"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/sp_weightAmount" />

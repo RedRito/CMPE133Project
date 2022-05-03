@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.text.isDigitsOnly
 import com.cmpe133.recycledex.databinding.ActivityEmissCalBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
