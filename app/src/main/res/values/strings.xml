@@ -16,6 +16,7 @@
     <string name="plastics">PLASTICS</string>
     <string name="metal">METAL</string>
     <string name="large_text">
+        <string name="dropped_pin">Dropped Pin</string>
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
