@@ -23,6 +23,7 @@ class HomePageActivity : AppCompatActivity() {
         val glassFragment = GlassPageFragment()
         val electronicFragment = ElectronicsPageFragment()
         val searchFragment = SearchingFragment()
+        val mapsFragment = MapsFragment()
 
 
         //first Fragment that is shown
@@ -31,6 +32,7 @@ class HomePageActivity : AppCompatActivity() {
         bottomNavView.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.home  -> setCurrentFragment(metalsFragment)
+                R.id.map   -> setCurrentFragment(mapsFragment)
                 R.id.articles -> setCurrentFragment(articlesFragment)
                 R.id.search -> setCurrentFragment(searchFragment)
                 R.id.profile -> setCurrentFragment(profileFragment)
