@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">SimpleAppToDoList</string>
-    <string name="login">Login</string>
-    <string name="signup">Signup</string>
+    <string name="login">LOGIN</string>
+    <string name="signup">SIGN UP</string>
     <string name="username">USERNAME</string>
     <string name="password">PASSWORD</string>
     <string name="caplogin">LOGIN</string>
     <string name="confirmpassword">CONFIRM PASSWORD</string>
     <string name="signup2">SIGN UP</string>
-    <string name="guest">Continue as a guest</string>
+    <string name="guest">CONTINUE AS GUEST</string>
     <string name="title_activity_sign_in">SignInActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
