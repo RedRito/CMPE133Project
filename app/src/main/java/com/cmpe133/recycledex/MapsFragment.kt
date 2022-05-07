@@ -1,11 +1,16 @@
 package com.cmpe133.recycledex
 
+import android.Manifest
+import android.content.pm.PackageManager
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -13,9 +18,14 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.fragment_maps.*
 import java.util.*
 
 class MapsFragment : Fragment() {
+
+
+
+
 
     private val callback = OnMapReadyCallback { googleMap ->
         /**
@@ -33,6 +43,8 @@ class MapsFragment : Fragment() {
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sanjose, zoomlevel))
         setMapLongClick(googleMap)
 
+
+
     }
 
     override fun onCreateView(
@@ -47,6 +59,9 @@ class MapsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
+
+
+
     }
 
     private fun setMapLongClick(map: GoogleMap) {
@@ -66,7 +81,12 @@ class MapsFragment : Fragment() {
 
             )
         }
+
     }
+
+
+
+
 
 
 
