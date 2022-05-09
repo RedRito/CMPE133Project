@@ -2,6 +2,7 @@ package com.cmpe133.recycledex
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils.replace
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,8 +35,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         //MUST USE onClicks in onCreateView, otherwise it will register as NULL after the onCreate!!
         binding.electronicsCard.setOnClickListener {
 
-            val intent = Intent(context, ElectronicsPageFragment::class.java)
-            startActivity(intent)
+            //val intent = Intent(context, ElectronicsPageFragment::class.java)
+            //startActivity(intent)
         }
 
         return binding.root
@@ -45,5 +46,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onDestroyView()
         _binding = null
     }
+
+
 
 }
