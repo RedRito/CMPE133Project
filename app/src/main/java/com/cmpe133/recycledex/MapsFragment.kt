@@ -9,8 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentContainerView
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -52,7 +54,18 @@ class MapsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_maps, container, false)
+
+        val rootView: View = layoutInflater.inflate(R.layout.fragment_maps, container, false)
+        val mapinfo: CardView = rootView.findViewById(R.id.mapInfoCard)
+        val map: FragmentContainerView = rootView.findViewById(R.id.map)
+        val param = map.layoutParams
+        param.height = ViewGroup.LayoutParams.MATCH_PARENT
+        param.width = ViewGroup.LayoutParams.MATCH_PARENT
+        map.layoutParams = param
+        mapinfo.visibility = View.GONE
+
+        return rootView
+        //return inflater.inflate(R.layout.fragment_maps, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
