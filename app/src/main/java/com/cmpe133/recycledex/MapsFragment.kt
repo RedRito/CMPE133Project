@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentContainerView
@@ -54,16 +55,18 @@ class MapsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val rootView: View = layoutInflater.inflate(R.layout.fragment_maps, container, false)
-//        val frag :FragmentContainerView = rootView.findViewById(R.id.mapInfo)
-//        val mapp : FragmentContainerView = rootView.findViewById(R.id.map)
-//        val param = mapp.layoutParams
-//        param.height = ViewGroup.LayoutParams.MATCH_PARENT
-//        param.width = ViewGroup.LayoutParams.MATCH_PARENT
-//        mapp.layoutParams = param
-//        frag.visibility = View.GONE
+        val mapinfo: CardView = rootView.findViewById(R.id.mapInfoCard)
+        val map: FragmentContainerView = rootView.findViewById(R.id.map)
+        val param = map.layoutParams
+        param.height = ViewGroup.LayoutParams.MATCH_PARENT
+        param.width = ViewGroup.LayoutParams.MATCH_PARENT
+        map.layoutParams = param
+        mapinfo.visibility = View.GONE
 
         return rootView
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
