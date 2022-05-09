@@ -101,7 +101,7 @@ class ProfileFragment : Fragment() {
         //MUST USE onClicks in onCreateView, otherwise it will register as NULL after the onCreate!!
         binding.btnLogout.setOnClickListener {
             auth.signOut()
-            val intent = Intent(context, SignInActivity::class.java)
+            val intent = Intent(context, MainActivity::class.java)
             startActivity(intent)
         }
         binding.cvTotalemissions.setOnClickListener{

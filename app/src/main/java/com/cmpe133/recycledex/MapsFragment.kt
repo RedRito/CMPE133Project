@@ -1,6 +1,7 @@
 package com.cmpe133.recycledex
 
 import android.Manifest
+import android.app.ActionBar
 import android.content.pm.PackageManager
 import androidx.fragment.app.Fragment
 
@@ -65,7 +66,7 @@ class MapsFragment : Fragment() {
         mapinfo.visibility = View.GONE
 
         return rootView
-        //return inflater.inflate(R.layout.fragment_maps, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

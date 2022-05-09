@@ -24,6 +24,7 @@ class HomePageActivity : AppCompatActivity() {
         val electronicFragment = ElectronicsPageFragment()
         val searchFragment = SearchingFragment()
         val mapsFragment = MapsFragment()
+        val centersFragment = CentersFragment()
 
 
         //first Fragment that is shown
@@ -33,7 +34,7 @@ class HomePageActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.home  -> setCurrentFragment(metalsFragment)
                 R.id.articles -> setCurrentFragment(searchFragment)
-                R.id.search -> setCurrentFragment(articlesFragment)
+                R.id.search -> setCurrentFragment(centersFragment)
                 R.id.map   -> setCurrentFragment(mapsFragment)
                 R.id.profile -> setCurrentFragment(profileFragment)
             }

@@ -14,6 +14,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cmpe133.recycledex.databinding.FragmentArticlesBinding
+import com.google.firebase.auth.FirebaseAuth
 //import com.cmpe133.recycledex.databinding.FragmentArticlesBinding
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_articles.view.*
@@ -33,6 +34,7 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
     private var _binding: FragmentArticlesBinding? = null //mirrored off of profilefragment.kt
     private lateinit var database: DatabaseReference
     private lateinit var articleRecyclerView: RecyclerView
+    private  lateinit var  firebaseAuth: FirebaseAuth
     private lateinit var articleArrayList: ArrayList<Article>
     private lateinit var articleSearchedList: ArrayList<Article>
     private val binding get() = _binding!! //mirrored off of profilefragment.kt
@@ -50,6 +52,10 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
         articleRecyclerView.setHasFixedSize(true)
         articleArrayList = arrayListOf<Article>()
         articleSearchedList = arrayListOf<Article>()
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        val uid = firebaseAuth.currentUser?.uid!!
+
         var topText: TextView = rootView.findViewById(R.id.tvSuggestedArticles)
         getArticleData()
         val queryText: SearchView = rootView.findViewById(R.id.svcvFragment)
@@ -65,6 +71,7 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
                 }
                 topText.text = "Results"
                 setArticleList()
+                addToUserTest(uid)
 
 
                 return true
@@ -75,12 +82,6 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
             }
 
         })
-        //_binding = FragmentArticlesBinding.inflate(inflater, container, false) //mirrored off of profilefragment.kt
-        // MUST USE onClicks in onCreateView, otherwise it will register as NULL after the onCreate!!
-//        if(!articleSearchedList.isNullOrEmpty())
-//        {
-//            Toast.makeText(context, "NOT EMPTY", Toast.LENGTH_SHORT).show()
-//        }
         return rootView
     }
     private fun getQuery(query : String){
@@ -96,6 +97,18 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
             {
                    articleSearchedList.add(articles)
             }
+        }
+    }
+    private fun addToUserTest(uid : String ){
+        database = FirebaseDatabase.getInstance().getReference("Users")
+
+        val user = mapOf<String, ArrayList<Article>>(
+            "favArticles" to articleSearchedList
+        )
+        database.child(uid).updateChildren(user).addOnSuccessListener {
+            Toast.makeText(context, "Success!!", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener{
+            Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
         }
     }
     private fun setArticleList(){
