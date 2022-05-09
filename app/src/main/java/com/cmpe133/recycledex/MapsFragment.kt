@@ -1,6 +1,7 @@
 package com.cmpe133.recycledex
 
 import android.Manifest
+import android.app.ActionBar
 import android.content.pm.PackageManager
 import androidx.fragment.app.Fragment
 
@@ -11,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentContainerView
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -52,7 +54,16 @@ class MapsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_maps, container, false)
+        val rootView: View = layoutInflater.inflate(R.layout.fragment_maps, container, false)
+//        val frag :FragmentContainerView = rootView.findViewById(R.id.mapInfo)
+//        val mapp : FragmentContainerView = rootView.findViewById(R.id.map)
+//        val param = mapp.layoutParams
+//        param.height = ViewGroup.LayoutParams.MATCH_PARENT
+//        param.width = ViewGroup.LayoutParams.MATCH_PARENT
+//        mapp.layoutParams = param
+//        frag.visibility = View.GONE
+
+        return rootView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
