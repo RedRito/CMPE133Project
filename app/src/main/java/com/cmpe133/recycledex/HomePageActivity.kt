@@ -35,7 +35,6 @@ class HomePageActivity : AppCompatActivity() {
                 R.id.articles -> setCurrentFragment(searchFragment)
                 R.id.search -> setCurrentFragment(articlesFragment)
                 R.id.map   -> setCurrentFragment(mapsFragment)
-
                 R.id.profile -> setCurrentFragment(profileFragment)
             }
             true
