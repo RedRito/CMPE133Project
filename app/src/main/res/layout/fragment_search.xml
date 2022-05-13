@@ -20,17 +20,20 @@
         app:layout_constraintBottom_toTopOf="@+id/rvsearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:text="Suggested Articles"
         android:id="@+id/tvSuggestedArticles"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/svcvFragment"
+        android:text="Suggested Articles"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/rvsearch"
-        app:layout_constraintHorizontal_bias="0.0"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svcvFragment" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvsearch"

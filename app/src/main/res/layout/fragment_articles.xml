@@ -1,56 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-->
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ArticlesFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/articletest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="309dp"
-            android:text="ARTICLESFRAGMENT"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</FrameLayout>
-<-->
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cvItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="16dp"
-    android:layout_margin="16dp">
-    <!--> android:onClick="switchPage" -->
-
-    <!--
-    android:layout_marginTop="1dp"
-    android:layout_marginBottom="663dp"
-    -->
-
-
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="#A495794F"
+    app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp
-">
-
-
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="5dp"
+>
+        <!-->
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivArticleImage"
             android:layout_width="120dp"
@@ -63,19 +30,19 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
-
-
+-->
         <TextView
             android:id="@+id/tvArticleTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:text="Title of Article"
+            android:textColor="#372305"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/tvArticleAuthor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/ivArticleImage"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -85,11 +52,12 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:text="Author"
-            android:textSize="20sp"
+            android:textColor="#054207"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/tvArticleDescription"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@id/ivArticleImage"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvArticleTitle" />
 
         <TextView
@@ -98,10 +66,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:text="Description"
-            android:textSize="20sp"
+            android:textColor="#313C31"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@id/ivArticleImage"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvArticleAuthor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
