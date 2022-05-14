@@ -20,6 +20,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.fragment_maps.*
 import java.util.*
@@ -41,10 +42,21 @@ class MapsFragment : Fragment() {
          * user has installed Google Play services and returned to the app.
          */
         val sanjose = LatLng(37.3382, -121.8863)
-        val zoomlevel = 15f         //This is how close the map starts off
+        val sjmetalrecycling = LatLng(37.36115069325536, -121.89607100588645)
+        val storyroad = LatLng(37.33479662190691,-121.85140220158094)
+        val ranchtownRC  = LatLng(37.31564756725881,-121.90712595986436)
+        val zoomlevel = 10f         //This is how close the map starts off
         googleMap.addMarker(MarkerOptions().position(sanjose).title("Marker in San Jose"))
+        googleMap.addMarker(MarkerOptions().position(sjmetalrecycling).title("San Jose Metal Recycling"))
+        //googleMap.addMarker(MarkerOptions().position(sjmetalrecycling).snippet("recyclign center"))
+        googleMap.addMarker(MarkerOptions().position(storyroad).title("Story Road Recycling LLC"))
+        googleMap.addMarker(MarkerOptions().position(ranchtownRC).title("Ranch Town Recycling Center Inc"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sanjose, zoomlevel))
         setMapLongClick(googleMap)
+
+
+
+
 
 
 

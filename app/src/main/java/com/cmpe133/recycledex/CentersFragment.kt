@@ -93,6 +93,16 @@ class CentersFragment : Fragment() {
 //                            val i = Intent(Intent.ACTION_VIEW)
 //                            i.data = Uri.parse(link)
 //                            startActivity(i)
+                val rcname = centersArrayList[position].name
+                val location = centersArrayList[position].location
+                val hours = centersArrayList[position].description
+                val phone = centersArrayList[position].phone
+                val materials = centersArrayList[position].accepted
+                val website = centersArrayList[position].link
+
+                //val intent = Intent(context, MapsFragment::class.java)
+                //startActivity(intent)
+
                 Toast.makeText(context, centersArrayList[position].toString(), Toast.LENGTH_SHORT).show()
 
             }
