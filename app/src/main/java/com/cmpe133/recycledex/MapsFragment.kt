@@ -181,26 +181,26 @@ class MapsFragment : Fragment() {
                 {
                     if(!checkIfExists(rcname)) //CHECK IF ALREADY IN USER FAVORITES
                     {
-                        Toast.makeText(context, "Favorited!", Toast.LENGTH_SHORT).show()
+
                         favArrayList.add(center)
                         val user = mapOf<String, ArrayList<Centers>>(
                             "favCenters" to favArrayList
                         )
                         database.child(uid!!).updateChildren(user).addOnSuccessListener {
-                            Toast.makeText(context, "Success!!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "Favorited!", Toast.LENGTH_SHORT).show()
                         }.addOnFailureListener{
                             Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
                         }
                     }
                     else //DELETES FROM USER FAVORITES
                     {
-                        Toast.makeText(context, "Unfavorited", Toast.LENGTH_SHORT).show()
+
                         removeCenter(rcname)
                         val user = mapOf<String, ArrayList<Centers>>(
                             "favCenters" to favArrayList
                         )
                         database.child(uid!!).updateChildren(user).addOnSuccessListener {
-                            Toast.makeText(context, "Success!!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "Unfavorited", Toast.LENGTH_SHORT).show()
                         }.addOnFailureListener{
                             Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
                         }
