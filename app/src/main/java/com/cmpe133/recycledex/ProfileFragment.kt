@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.fragment_profile.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -98,6 +99,10 @@ class ProfileFragment : Fragment() {
         //val view = inflater!!.inflate(R.layout.fragment_profile, container, false)
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
 
+        val args = this.arguments
+        val inputData = args?.get("rcname")
+        //tvProfile.text = inputData.toString()
+        Toast.makeText(context, inputData.toString(), Toast.LENGTH_SHORT).show()
         //MUST USE onClicks in onCreateView, otherwise it will register as NULL after the onCreate!!
         binding.btnLogout.setOnClickListener {
             auth.signOut()

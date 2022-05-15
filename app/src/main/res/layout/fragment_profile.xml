@@ -68,7 +68,6 @@
                     android:gravity="center_vertical"
                     android:text="Total Emissions"
                     android:textSize="20sp"
-                    android:onClick="switchPage"
                     android:layout_marginLeft="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
