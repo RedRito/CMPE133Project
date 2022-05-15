@@ -54,6 +54,21 @@ class ProfileFragment : Fragment() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        val uid = auth.currentUser?.uid
+        database = FirebaseDatabase.getInstance().getReference("Users")
+        if(!uid.isNullOrEmpty())
+        {
+            getUserData(uid)
+
+        }
+        else
+        {
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     private fun getUserData(userId: String) {
 
