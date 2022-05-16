@@ -9,12 +9,23 @@
     <string name="signup2">SIGN UP</string>
     <string name="guest">CONTINUE AS GUEST</string>
     <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="suggestedarticle"><font size="20">SUGGESTED ARTICLE</font></string>
+    <string name="learntorecycle"><font size="20">LEARN HOW TO RECYCLE</font></string>
+    <string name="emissionssaved"><font size="20">EMISSIONS SAVED</font></string>
+    <string name="favoritelocations"><font size="20">FAVORITE LOCATIONS</font></string>
+    <string name="favoritelocation1"><font size="20">LOCATION 1 HERE</font></string>
+    <string name="favoritelocation2"><font size="20">LOCATION 2 HERE</font></string>
+    <string name="favoritelocation3"><font size="20">LOCATION 3 HERE</font></string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="logo">logo</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="plastics">PLASTICS</string>
     <string name="metal">METAL</string>
+    <string name="paper">PAPER</string>
+    <string name="glass">GLASS</string>
+    <string name="electronics">ELECTRONICS</string>
+    <string name="dark_location_icon">darklocation</string>
     <string name="large_text">
 
         "Material is the metaphor.\n\n"
@@ -111,4 +122,9 @@
     <string name="dropped_pin">Dropped Pin</string>
     <string name="map_api_key">AIzaSyAKYuq374qRnmvosdTTukobDTRRUswe72Y</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="recycling_center_name">Recycling Center Name</string>
+    <string name="address">Address</string>
+    <string name="title_of_article">Title of Article</string>
+    <string name="author">Author</string>
+    <string name="description">Description</string>
 </resources>
