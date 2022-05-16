@@ -13,9 +13,6 @@
     <string name="learntorecycle"><font size="20">LEARN HOW TO RECYCLE</font></string>
     <string name="emissionssaved"><font size="20">EMISSIONS SAVED</font></string>
     <string name="favoritelocations"><font size="20">FAVORITE LOCATIONS</font></string>
-    <string name="favoritelocation1"><font size="20">LOCATION 1 HERE</font></string>
-    <string name="favoritelocation2"><font size="20">LOCATION 2 HERE</font></string>
-    <string name="favoritelocation3"><font size="20">LOCATION 3 HERE</font></string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="logo">logo</string>

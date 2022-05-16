@@ -196,31 +196,20 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/nav_menu" />
-
     <TextView
         android:id="@+id/tv_suggestedArticle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="664dp"
+        android:layout_marginBottom="128dp"
         android:fontFamily="sans-serif"
-        android:gravity="center_horizontal|center_vertical"
         android:text="@string/suggestedarticle"
         android:textColor="@color/mildishGreen"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_recentsearch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="@+id/tv_calculation" />
 
     <View
         android:id="@+id/articleBoxHomePage"
@@ -235,6 +224,18 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_suggestedArticle"
         app:layout_constraintVertical_bias="0.013" />
 
+    <!--<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvsearch"
+        android:layout_width="334dp"
+        android:layout_height="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_suggestedArticle"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/fragment_articles" />
+-->
     <TextView
         android:id="@+id/tv_recentsearch"
         android:layout_width="wrap_content"
@@ -257,7 +258,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:fontFamily="sans-serif"
-        android:gravity="center_horizontal|center_vertical"
         android:text="@string/emissionssaved"
         android:textColor="@color/mildishGreen"
         android:textStyle="bold"
@@ -270,7 +270,7 @@
 
     <View
         android:id="@+id/calculationbox"
-        android:layout_width="159dp"
+        android:layout_width="140dp"
         android:layout_height="51dp"
         android:background="@drawable/boxes"
         android:clickable="true"
@@ -285,52 +285,34 @@
         app:layout_constraintVertical_bias="0.526" />
 
     <TextView
-        android:id="@+id/tv_favoritelocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:fontFamily="sans-serif"
-        android:gravity="center_horizontal|center_vertical"
+        android:id="@+id/tvSuggestedRC"
         android:text="@string/favoritelocations"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:textAlignment="center"
         android:textColor="@color/mildishGreen"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686" />
-
-    <TextView
-        android:id="@+id/favoritelocations"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:fontFamily="sans-serif"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/favoritelocations"
-        android:textColor="@color/mildishGreen"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617" />
+        app:layout_constraintVertical_bias="0.617"
+        app:layout_constraintTop_toBottomOf="@+id/calculationbox" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcFavLocHome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:nestedScrollingEnabled="false"
-        android:clipToPadding="false"
-        android:layout_marginTop="10dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/favoritelocations"
-        tools:listitem="@layout/favorite_location_card"
-        />
-
+        app:layout_constraintTop_toBottomOf="@id/tvSuggestedRC"
+        tools:listitem="@layout/centers_card" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

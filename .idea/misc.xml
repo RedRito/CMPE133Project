@@ -53,6 +53,7 @@
         <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/signup_main.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/drawable-v24/boxes.xml" value="0.1" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/drawable/ic_favorite.xml" value="0.2715" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/activity_emiss_cal.xml" value="0.21842105263157896" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/activity_forgot_pass.xml" value="0.259375" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/activity_home_page.xml" value="0.12613981762917933" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/activity_sign_in.xml" value="0.259375" />
@@ -64,6 +65,7 @@
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_center_search.xml" value="0.371875" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_centers.xml" value="0.25" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_electronics_page.xml" value="0.36770833333333336" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_emission_calculation.xml" value="0.21842105263157896" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_favorite_location.xml" value="0.13489583333333333" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_favorites.xml" value="0.33" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_favorites_homepage.xml" value="0.26197916666666665" />
@@ -80,7 +82,7 @@
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_metals_page.xml" value="0.25" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_paper_page.xml" value="0.33" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_plastics_page.xml" value="0.36770833333333336" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_profile.xml" value="0.371875" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_profile.xml" value="0.350210970464135" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/fragment_search.xml" value="0.203125" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/homepage_location.xml" value="0.3020833333333333" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/CMPE133Projectv2/app/src/main/res/layout/homepage_main.xml" value="0.4" />
