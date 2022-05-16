@@ -81,6 +81,7 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
 
         })
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
