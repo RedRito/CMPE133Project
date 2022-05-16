@@ -47,8 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp
-">
+        android:layout_marginRight="16dp">
 
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -70,7 +69,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="Title of Article"
+            android:text="@string/title_of_article"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/tvArticleAuthor"
             app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +83,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="Author"
+            android:text="@string/author"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/tvArticleDescription"
             app:layout_constraintEnd_toEndOf="parent"
@@ -97,7 +96,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="Description"
+            android:text="@string/description"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
