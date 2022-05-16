@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homepage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lightgreen"
-    android:id="@+id/homepage"
     tools:context=".HomeFragment">
 
     <HorizontalScrollView
@@ -15,17 +15,17 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="6dp"
-        app:layout_constraintEnd_toEndOf="@+id/calculationbox"
+        app:layout_constraintEnd_toEndOf="@+id/cv_totalemissions"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_calculation"
+        app:layout_constraintStart_toStartOf="@+id/articleBoxHomePage"
         app:layout_constraintTop_toBottomOf="@+id/tv_recentsearch">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:baselineAligned="false">
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/plastics"
@@ -41,10 +41,10 @@
                     android:layout_height="65dp"
                     android:layout_marginEnd="15dp"
                     android:background="@drawable/boxes"
-                    android:src="@drawable/plastics"
                     android:clickable="true"
+                    android:contentDescription="@string/plastics"
                     android:focusable="true"
-                    android:contentDescription="@string/plastics" />
+                    android:src="@drawable/plastics" />
 
                 <TextView
                     android:id="@+id/learnto1text"
@@ -74,10 +74,10 @@
                     android:layout_height="65dp"
                     android:layout_marginEnd="15dp"
                     android:background="@drawable/boxes"
-                    android:src="@drawable/metal"
                     android:clickable="true"
+                    android:contentDescription="@string/metal"
                     android:focusable="true"
-                    android:contentDescription="@string/metal" />
+                    android:src="@drawable/metal" />
 
                 <TextView
                     android:id="@+id/learnto2text"
@@ -107,10 +107,10 @@
                     android:layout_height="65dp"
                     android:layout_marginEnd="15dp"
                     android:background="@drawable/boxes"
-                    android:src="@drawable/paper"
                     android:clickable="true"
+                    android:contentDescription="@string/paper"
                     android:focusable="true"
-                    android:contentDescription="@string/paper" />
+                    android:src="@drawable/paper" />
 
 
                 <TextView
@@ -141,10 +141,10 @@
                     android:layout_height="65dp"
                     android:layout_marginEnd="15dp"
                     android:background="@drawable/boxes"
-                    android:src="@drawable/wineglass"
                     android:clickable="true"
+                    android:contentDescription="@string/glass"
                     android:focusable="true"
-                    android:contentDescription="@string/glass" />
+                    android:src="@drawable/wineglass" />
 
                 <TextView
                     android:id="@+id/learnto4text"
@@ -174,10 +174,10 @@
                     android:layout_height="65dp"
                     android:layout_marginEnd="15dp"
                     android:background="@drawable/boxes"
-                    android:src="@drawable/electronics"
                     android:clickable="true"
+                    android:contentDescription="@string/electronics"
                     android:focusable="true"
-                    android:contentDescription="@string/electronics" />
+                    android:src="@drawable/electronics" />
 
                 <TextView
                     android:id="@+id/learnto5text"
@@ -196,36 +196,25 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/nav_menu" />
-
     <TextView
         android:id="@+id/tv_suggestedArticle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="664dp"
+        android:layout_marginBottom="128dp"
         android:fontFamily="sans-serif"
-        android:gravity="center_horizontal|center_vertical"
         android:text="@string/suggestedarticle"
         android:textColor="@color/mildishGreen"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_recentsearch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="@+id/cv_totalemissions" />
 
     <View
         android:id="@+id/articleBoxHomePage"
         android:layout_width="334dp"
-        android:layout_height="96dp"
+        android:layout_height="100dp"
         android:background="@drawable/boxes"
         android:clickable="true"
         android:focusable="true"
@@ -251,86 +240,159 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.264" />
 
-    <TextView
-        android:id="@+id/tv_calculation"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_totalemissions"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:fontFamily="sans-serif"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/emissionssaved"
-        android:textColor="@color/mildishGreen"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.162"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
-
-    <View
-        android:id="@+id/calculationbox"
-        android:layout_width="159dp"
-        android:layout_height="51dp"
-        android:background="@drawable/boxes"
         android:clickable="true"
-        android:focusable="true"
-        android:textColor="@color/mildishGreen"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.526" />
+        app:cardBackgroundColor="@color/mildishGreen"
+        app:layout_constraintBottom_toTopOf="@id/tvfaveloc"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        android:focusable="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_emiss2"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:text="@string/emissionssaved"
+                android:textColor="@color/lightbrown"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/tv_totalemiss"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_totalemiss"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:text="@string/emission_numbers"
+                android:textColor="@color/lightbrown"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_emiss2"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/tv_favoritelocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:fontFamily="sans-serif"
-        android:gravity="center_horizontal|center_vertical"
+        android:id="@+id/tvfaveloc"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
         android:text="@string/favoritelocations"
+        android:textAlignment="center"
         android:textColor="@color/mildishGreen"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686" />
-
-    <TextView
-        android:id="@+id/favoritelocations"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:fontFamily="sans-serif"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/favoritelocations"
-        android:textColor="@color/mildishGreen"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_recentsearch"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.617" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcFavLocHome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:nestedScrollingEnabled="false"
-        android:clipToPadding="false"
-        android:layout_marginTop="10dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/favoritelocations"
-        tools:listitem="@layout/favorite_location_card"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tvfaveloc"
+        tools:listitem="@layout/centers_card" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvsuggesteditem"
+        android:layout_width="323dp"
+        android:layout_height="86dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_suggestedArticle"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivArticleImage"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvArticleDescription"
+                app:layout_constraintEnd_toStartOf="@+id/tvArticleTitle"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/tvArticleTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="@string/title_of_article"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvArticleAuthor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/ivArticleImage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvArticleAuthor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="@string/author"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvArticleDescription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/ivArticleImage"
+                app:layout_constraintTop_toBottomOf="@id/tvArticleTitle" />
+
+            <TextView
+                android:id="@+id/tvArticleDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="@string/description"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/ivArticleImage"
+                app:layout_constraintTop_toBottomOf="@id/tvArticleAuthor" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
