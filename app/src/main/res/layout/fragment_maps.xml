@@ -43,11 +43,10 @@
                 android:layout_marginTop="10dp"
                 android:text="Location:"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rcName" />
-
 
 
             <TextView
@@ -58,10 +57,10 @@
                 android:layout_marginTop="10dp"
                 android:text="Hours:"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rcLocation" />
+                app:layout_constraintTop_toBottomOf="@+id/rcLocationInfo" />
 
 
             <TextView
@@ -72,10 +71,10 @@
                 android:layout_marginTop="10dp"
                 android:text="Phone:"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rcHours" />
+                app:layout_constraintTop_toBottomOf="@+id/rcHoursInfo" />
 
             <TextView
                 android:id="@+id/rcMaterials"
@@ -85,10 +84,11 @@
                 android:layout_marginTop="10dp"
                 android:text="Accepted Materials: "
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rcPhone" />
+                app:layout_constraintTop_toBottomOf="@+id/rcPhoneInfo" />
+
             <TextView
                 android:id="@+id/rcRates"
                 android:layout_width="wrap_content"
@@ -97,10 +97,11 @@
                 android:layout_marginTop="10dp"
                 android:text="Material Rates:  "
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rcMaterials" />
+                app:layout_constraintTop_toBottomOf="@+id/rcMaterialsInfo" />
+
             <TextView
                 android:id="@+id/rcWeb"
                 android:layout_width="wrap_content"
@@ -109,92 +110,107 @@
                 android:layout_marginTop="10dp"
                 android:text="Website: "
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rcRates" />
+                app:layout_constraintTop_toBottomOf="@+id/rcRatesInfo" />
 
             <TextView
                 android:id="@+id/rcLocationInfo"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="RC location"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/rcHoursInfo"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/rcLocation"
                 app:layout_constraintTop_toBottomOf="@+id/rcName" />
 
             <TextView
                 android:id="@+id/rcHoursInfo"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="RC hours"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/rcHours"
                 app:layout_constraintTop_toBottomOf="@+id/rcLocationInfo" />
 
             <TextView
                 android:id="@+id/rcPhoneInfo"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="RC phone number"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/rcPhone"
                 app:layout_constraintTop_toBottomOf="@+id/rcHoursInfo" />
 
             <TextView
                 android:id="@+id/rcMaterialsInfo"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="RC accepted materials"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/rcMaterials"
                 app:layout_constraintTop_toBottomOf="@+id/rcPhoneInfo" />
 
             <TextView
                 android:id="@+id/rcRatesInfo"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="RC materials rate"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/rcRates"
                 app:layout_constraintTop_toBottomOf="@+id/rcMaterialsInfo" />
 
             <TextView
                 android:id="@+id/rcWebInfo"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="RC website"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/rcWeb"
                 app:layout_constraintTop_toBottomOf="@+id/rcRatesInfo" />
 
             <ImageButton
                 android:id="@+id/favoriteButton"
                 android:contentDescription="Favorite Button to save RC location"
+                android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

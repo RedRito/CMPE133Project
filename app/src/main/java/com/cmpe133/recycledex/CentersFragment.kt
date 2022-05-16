@@ -22,7 +22,7 @@ class CentersFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var centersArrayList: ArrayList<Centers>       //Array of type / object centers
     private lateinit var centersSearchedList: ArrayList<Centers>    //Array of type Centers
-
+    private lateinit var bundle: Bundle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,10 +39,9 @@ class CentersFragment : Fragment() {
         centersRecyclerView.setHasFixedSize(true)
         centersArrayList = arrayListOf<Centers>()   //initalize arrays
         centersSearchedList = arrayListOf<Centers>()
-
-        firebaseAuth = FirebaseAuth.getInstance()
-        val uid = firebaseAuth.currentUser?.uid!!
+        bundle = Bundle()
         var topText: TextView = rootView.findViewById(R.id.tvSuggestedRC)
+
         getArticleData()
         val queryText: SearchView = rootView.findViewById(R.id.locationsvFragment)
         queryText.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
@@ -89,11 +88,25 @@ class CentersFragment : Fragment() {
 
         adapter.setOnItemClickListener(object : CentersFragmentAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-                //            val link = centersArrayList[position].link
-//                            val i = Intent(Intent.ACTION_VIEW)
-//                            i.data = Uri.parse(link)
-//                            startActivity(i)
-                Toast.makeText(context, centersArrayList[position].toString(), Toast.LENGTH_SHORT).show()
+                val rcname = centersArrayList[position].name
+                val location = centersArrayList[position].location
+                val hours = centersArrayList[position].description
+                val phone = centersArrayList[position].phone
+                val materials = centersArrayList[position].accepted
+                val link = centersArrayList[position].link
+                val lat = centersArrayList[position].lat
+                val lon = centersArrayList[position].lon
+                bundle.putString("rcname", rcname)
+                bundle.putString("location", location)
+                bundle.putString("hours", hours)
+                bundle.putString("phone", phone)
+                bundle.putString("materials", materials)
+                bundle.putString("link", link)
+                bundle.putDouble("lat", lat)
+                bundle.putDouble("lon", lon)
+                val fragment = MapsFragment()
+                fragment.arguments = bundle
+                fragmentManager?.beginTransaction()?.replace(R.id.flFragment, fragment)?.commit()
 
             }
 
@@ -116,14 +129,26 @@ class CentersFragment : Fragment() {
                     //when you click on a card, do something
                     adapter.setOnItemClickListener(object : CentersFragmentAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
-                            //YOUR CODE HERE
-//                            val link = centersArrayList[position].link
-//                            val i = Intent(Intent.ACTION_VIEW)
-//                            i.data = Uri.parse(link)
-//                            startActivity(i)
+                            val rcname = centersArrayList[position].name
+                            val location = centersArrayList[position].location
+                            val hours = centersArrayList[position].description
+                            val phone = centersArrayList[position].phone
+                            val materials = centersArrayList[position].accepted
+                            val link = centersArrayList[position].link
+                            val lat = centersArrayList[position].lat
+                            val lon = centersArrayList[position].lon
 
-                            Toast.makeText(context, centersArrayList[position].toString(), Toast.LENGTH_SHORT).show()
-
+                            bundle.putString("rcname", rcname)
+                            bundle.putString("location", location)
+                            bundle.putString("hours", hours)
+                            bundle.putString("phone", phone)
+                            bundle.putString("materials", materials)
+                            bundle.putString("link", link)
+                            bundle.putDouble("lat", lat)
+                            bundle.putDouble("lon", lon)
+                            val fragment = MapsFragment()
+                            fragment.arguments = bundle
+                            fragmentManager?.beginTransaction()?.replace(R.id.flFragment, fragment)?.commit()
                         }
 
                     })

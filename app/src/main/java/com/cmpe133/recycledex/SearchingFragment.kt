@@ -53,8 +53,8 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
         articleArrayList = arrayListOf<Article>()
         articleSearchedList = arrayListOf<Article>()
 
-        firebaseAuth = FirebaseAuth.getInstance()
-        val uid = firebaseAuth.currentUser?.uid!!
+//        firebaseAuth = FirebaseAuth.getInstance()
+//        val uid = firebaseAuth.currentUser?.uid!!
 
         var topText: TextView = rootView.findViewById(R.id.tvSuggestedArticles)
         getArticleData()
@@ -71,7 +71,7 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
                 }
                 topText.text = "Results"
                 setArticleList()
-                addToUserTest(uid)
+//                addToUserTest(uid)
 
 
                 return true
@@ -99,18 +99,18 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
             }
         }
     }
-    private fun addToUserTest(uid : String ){
-        database = FirebaseDatabase.getInstance().getReference("Users")
-
-        val user = mapOf<String, ArrayList<Article>>(
-            "favArticles" to articleSearchedList
-        )
-        database.child(uid).updateChildren(user).addOnSuccessListener {
-            Toast.makeText(context, "Success!!", Toast.LENGTH_SHORT).show()
-        }.addOnFailureListener{
-            Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
-        }
-    }
+//    private fun addToUserTest(uid : String ){
+//        database = FirebaseDatabase.getInstance().getReference("Users")
+//
+//        val user = mapOf<String, ArrayList<Article>>(
+//            "favArticles" to articleSearchedList
+//        )
+//        database.child(uid).updateChildren(user).addOnSuccessListener {
+//            Toast.makeText(context, "Success!!", Toast.LENGTH_SHORT).show()
+//        }.addOnFailureListener{
+//            Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+//        }
+//    }
     private fun setArticleList(){
         val adapter = SearchFragmentAdapter(articleSearchedList)
         articleRecyclerView.adapter = adapter
