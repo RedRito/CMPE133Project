@@ -137,17 +137,17 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
             transaction.disallowAddToBackStack()
             transaction.commit()
         }
-        var articleBoxHomePage: View = rootView.findViewById(R.id.articleBoxHomePage)
+        var articleBoxHomePage: CardView = rootView.findViewById(R.id.cvsuggesteditem)
         articleBoxHomePage.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.articleBoxHomePage, SearchingFragment())
+            transaction.replace(R.id.cvsuggesteditem, SearchingFragment())
             transaction.disallowAddToBackStack()
             transaction.commit()
         }
-        var calculationbox: View = rootView.findViewById(R.id.calculationbox)
+        var calculationbox: CardView = rootView.findViewById(R.id.tv_totalemiss)
         calculationbox.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.calculationbox, ProfileFragment())
+            transaction.replace(R.id.tv_totalemiss, ProfileFragment())
             transaction.disallowAddToBackStack()
             transaction.commit()
         }
