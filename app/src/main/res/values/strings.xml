@@ -127,4 +127,5 @@
     <string name="title_of_article">Title of Article</string>
     <string name="author">Author</string>
     <string name="description">Description</string>
+    <string name="emission_numbers">100</string>
 </resources>
