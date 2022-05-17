@@ -50,20 +50,6 @@
         android:layout_marginRight="16dp">
 
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivArticleImage"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="1dp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvArticleDescription"
-            app:layout_constraintEnd_toStartOf="@+id/tvArticleTitle"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:ignore="MissingConstraints" />
-
-
         <TextView
             android:id="@+id/tvArticleTitle"
             android:layout_width="0dp"
@@ -73,8 +59,7 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/tvArticleAuthor"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/ivArticleImage"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -87,8 +72,7 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/tvArticleDescription"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@id/ivArticleImage"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvArticleTitle" />
 
         <TextView
@@ -99,8 +83,7 @@
             android:text="@string/description"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@id/ivArticleImage"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvArticleAuthor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
