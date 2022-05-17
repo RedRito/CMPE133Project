@@ -46,7 +46,7 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
                         favArrayList.add(center!!)
                     }
                     val adapter = CentersFragmentAdapter(favArrayList)
-                    rcFavLocHome.adapter = adapter
+                    favcentersRecyclerView.adapter = adapter
                     adapter.setOnItemClickListener(object : CentersFragmentAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
                             val rcname = favArrayList[position].name
@@ -105,49 +105,49 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
         var learnto1: ImageView = rootView.findViewById(R.id.learnto1)
         learnto1.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.learnto1, PlasticsPageFragment())
+            transaction.replace(R.id.flFragment, PlasticsPageFragment())
             transaction.disallowAddToBackStack()
             transaction.commit()
         }
         var learnto2: ImageView = rootView.findViewById(R.id.learnto2)
         learnto2.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.learnto2, MetalsPageFragment())
+            transaction.replace(R.id.flFragment, MetalsPageFragment())
             transaction.disallowAddToBackStack()
             transaction.commit()
         }
         var learnto3: ImageView = rootView.findViewById(R.id.learnto3)
         learnto3.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.learnto3, PaperPageFragment())
+            transaction.replace(R.id.flFragment, PaperPageFragment())
             transaction.disallowAddToBackStack()
             transaction.commit()
         }
         var learnto4: ImageView = rootView.findViewById(R.id.learnto4)
         learnto4.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.learnto4, GlassPageFragment())
+            transaction.replace(R.id.flFragment, GlassPageFragment())
             transaction.disallowAddToBackStack()
             transaction.commit()
         }
         var learnto5: ImageView = rootView.findViewById(R.id.learnto5)
         learnto5.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.learnto5, ElectronicsPageFragment())
+            transaction.replace(R.id.flFragment, ElectronicsPageFragment())
             transaction.disallowAddToBackStack()
             transaction.commit()
         }
         var articleBoxHomePage: CardView = rootView.findViewById(R.id.cvsuggesteditem)
         articleBoxHomePage.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.cvsuggesteditem, SearchingFragment())
+            transaction.replace(R.id.flFragment, SearchingFragment())
             transaction.disallowAddToBackStack()
             transaction.commit()
         }
-        var calculationbox: CardView = rootView.findViewById(R.id.tv_totalemiss)
+        var calculationbox: CardView = rootView.findViewById(R.id.cv_totalemissions)
         calculationbox.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.tv_totalemiss, ProfileFragment())
+            transaction.replace(R.id.flFragment, ProfileFragment())
             transaction.disallowAddToBackStack()
             transaction.commit()
         }
