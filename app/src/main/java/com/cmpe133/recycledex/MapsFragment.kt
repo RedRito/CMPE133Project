@@ -54,27 +54,37 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        val sanjose = LatLng(37.3382, -121.8863)
-        val sjmetalrecycling = LatLng(37.36115069325536, -121.89607100588645)
-        val storyroad = LatLng(37.33479662190691,-121.85140220158094)
-        val ranchtownRC  = LatLng(37.31564756725881,-121.90712595986436)
+
+        database = FirebaseDatabase.getInstance().getReference("Centers")
+        //grabs all centers in database and sets the googlemap
+        database.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    for (CenterSnapshot in snapshot.children) {
+                        val center = CenterSnapshot.getValue(Centers::class.java)
+                        val lat = center!!.lat
+                        val lon = center!!.lon
+                        val name = center!!.name
+                        val mapLocation = LatLng(lat,lon)
+                        googleMap.addMarker(MarkerOptions().position(mapLocation).title(name))
+
+                    }
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+
+        //start the camera on San Jose, with a 10F zoom
         val zoomlevel = 10f         //This is how close the map starts off
-        googleMap.addMarker(MarkerOptions().position(sanjose).title("Marker in San Jose"))
-        googleMap.addMarker(MarkerOptions().position(sjmetalrecycling).title("San Jose Metal Recycling"))
-        //googleMap.addMarker(MarkerOptions().position(sjmetalrecycling).snippet("recyclign center"))
-        googleMap.addMarker(MarkerOptions().position(storyroad).title("Story Road Recycling LLC"))
-        googleMap.addMarker(MarkerOptions().position(ranchtownRC).title("Ranch Town Recycling Center Inc"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sanjose, zoomlevel))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(37.3382, -121.8863), zoomlevel))
         setMapLongClick(googleMap)
-
-
-
-
-
-
-
     }
 
+
+    //Function to get user data based on their login information
+    //Gets their favorite centers and adds it to the favorite array list
     fun getUserData(uid: String)
     {
         database = FirebaseDatabase.getInstance().getReference("Users")

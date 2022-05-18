@@ -20,6 +20,7 @@
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/blank_fragment.xml" value="0.19908814589665655" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/bottom_nav_bar.xml" value="0.25" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/centers_card.xml" value="0.4302536231884058" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/favorite_location_card.xml" value="0.27178318135764945" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_article_view.xml" value="0.32760416666666664" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_articles.xml" value="0.32864583333333336" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_centers.xml" value="0.4302536231884058" />
@@ -31,7 +32,7 @@
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_homepage.xml" value="0.22872340425531915" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_maps.xml" value="0.5" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_plastics_page.xml" value="0.4218816517667092" />
-        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_profile.xml" value="0.2695152013147083" />
+        <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_profile.xml" value="0.5" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_search.xml" value="0.42094017094017094" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_search1.xml" value="0.1752786220871327" />
         <entry key="..\:/Users/brand/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_testfragment.xml" value="0.27685185185185185" />
@@ -61,11 +62,6 @@
         <entry key="..\:/Users/brand/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.5149456521739131" />
         <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/activity_forgot_pass.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/activity_home_page.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/centers_card.xml" value="0.1375" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/favorite_location_card.xml" value="0.1375" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_article_view.xml" value="0.10552536231884058" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_articles.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_centers.xml" value="0.1375" />
         <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_electronics_page.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_glass_page.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/joshu/AndroidStudioProjects/CMPE133Project/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
