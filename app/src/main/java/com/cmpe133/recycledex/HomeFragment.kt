@@ -1,5 +1,7 @@
 package com.cmpe133.recycledex
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -139,10 +141,10 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
         }
         var articleBoxHomePage: CardView = rootView.findViewById(R.id.cvsuggesteditem)
         articleBoxHomePage.setOnClickListener {
-            val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.flFragment, SearchingFragment())
-            transaction.disallowAddToBackStack()
-            transaction.commit()
+            val link = "https://www.recyclenow.com/how-to-recycle/how-is-plastic-recycled"
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(link)
+            startActivity(i)
         }
         var calculationbox: CardView = rootView.findViewById(R.id.cv_totalemissions)
         calculationbox.setOnClickListener {

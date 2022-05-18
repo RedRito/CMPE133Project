@@ -77,7 +77,7 @@ class MapsFragment : Fragment() {
         })
 
         //start the camera on San Jose, with a 10F zoom
-        val zoomlevel = 10f         //This is how close the map starts off
+        val zoomlevel = 13f         //This is how close the map starts off
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(37.3382, -121.8863), zoomlevel))
         setMapLongClick(googleMap)
     }
