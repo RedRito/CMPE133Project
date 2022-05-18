@@ -324,12 +324,11 @@
         android:layout_height="86dp"
         android:layout_margin="16dp"
         app:cardCornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintBottom_toBottomOf="@id/articleBoxHomePage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_suggestedArticle"
-        app:layout_constraintVertical_bias="0.0">
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -338,31 +337,17 @@
             android:layout_marginRight="16dp">
 
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ivArticleImage"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="1dp"
-                app:layout_constraintBottom_toBottomOf="@+id/tvArticleDescription"
-                app:layout_constraintEnd_toStartOf="@+id/tvArticleTitle"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                tools:ignore="MissingConstraints" />
-
-
             <TextView
                 android:id="@+id/tvArticleTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
                 android:text="@string/title_of_article"
+                android:layout_marginTop="10dp"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/tvArticleAuthor"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/ivArticleImage"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
@@ -371,24 +356,27 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
                 android:text="@string/author"
-                android:textSize="20sp"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/tvArticleDescription"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/ivArticleImage"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvArticleTitle" />
 
             <TextView
                 android:id="@+id/tvArticleDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="sans-serif"
                 android:text="@string/description"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/ivArticleImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvArticleAuthor" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
