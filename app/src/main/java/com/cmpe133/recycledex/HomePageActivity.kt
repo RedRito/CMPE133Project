@@ -14,14 +14,8 @@ class HomePageActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //create a variable for each Fragment
-        val articlesFragment = ArticlesFragment()
         val homeFragment = HomeFragment()
         val profileFragment = ProfileFragment()
-        val plasticsFragment = PlasticsPageFragment()
-        val metalsFragment = MetalsPageFragment()
-        val paperFragment = PaperPageFragment()
-        val glassFragment = GlassPageFragment()
-        val electronicFragment = ElectronicsPageFragment()
         val searchFragment = SearchingFragment()
         val mapsFragment = MapsFragment()
         val centersFragment = CentersFragment()
@@ -29,7 +23,7 @@ class HomePageActivity : AppCompatActivity() {
 
         //first Fragment that is shown
         setCurrentFragment(homeFragment)
-
+        bottomNavView.selectedItemId = R.id.home
         bottomNavView.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.home  -> setCurrentFragment(homeFragment)
@@ -51,6 +45,7 @@ class HomePageActivity : AppCompatActivity() {
 
     }
 
+    //sets the fragment to the one that is passed
     private fun setCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.flFragment, fragment)

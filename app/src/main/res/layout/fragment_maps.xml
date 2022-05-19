@@ -200,6 +200,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:text="RC website"
+                android:clickable="true"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"

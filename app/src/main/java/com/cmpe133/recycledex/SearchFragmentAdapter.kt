@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 class SearchFragmentAdapter(private val articleList : ArrayList<Article>) : RecyclerView.Adapter<SearchFragmentAdapter.MyViewHolder>() {
 
     private lateinit var mListener: onItemClickListener
-
+    //onitem click interface
     interface onItemClickListener{
 
         fun onItemClick(position: Int)
 
     }
-
+    //method that sets the listener
     fun setOnItemClickListener(listener: onItemClickListener){
 
         mListener = listener
@@ -26,6 +26,7 @@ class SearchFragmentAdapter(private val articleList : ArrayList<Article>) : Recy
 
 
     inner class MyViewHolder(itemView: View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
+        //gets and intializes variables from layout
         val title: TextView = itemView.findViewById(R.id.tvArticleTitle)
         val author: TextView = itemView.findViewById(R.id.tvArticleAuthor)
         val description: TextView = itemView.findViewById(R.id.tvArticleDescription)
@@ -43,7 +44,7 @@ class SearchFragmentAdapter(private val articleList : ArrayList<Article>) : Recy
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.fragment_articles, parent, false)
         return MyViewHolder(itemView, mListener)
     }
-
+    //when given the arraylist, bind / change the data in the card layout
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentitem = articleList[position]
         holder.title.text = currentitem.title

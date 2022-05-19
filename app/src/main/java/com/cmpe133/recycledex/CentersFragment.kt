@@ -17,9 +17,9 @@ import com.google.firebase.database.*
 
 
 class CentersFragment : Fragment() {
-    private lateinit var database: DatabaseReference
-    private lateinit var centersRecyclerView: RecyclerView          //THE RECYLER VIEW YOU EDIT / SET
-    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var database: DatabaseReference                //Database
+    private lateinit var centersRecyclerView: RecyclerView          //Recyclerview
+    private lateinit var firebaseAuth: FirebaseAuth                 //Firebase auth
     private lateinit var centersArrayList: ArrayList<Centers>       //Array of type / object centers
     private lateinit var centersSearchedList: ArrayList<Centers>    //Array of type Centers
     private lateinit var bundle: Bundle
@@ -35,15 +35,19 @@ class CentersFragment : Fragment() {
         val rootView: View = layoutInflater.inflate(R.layout.fragment_centers, container, false)    //inflate your page here, goes in first argument, R.layout.YOUR_LAYOUT_NAME_HERE
 
         centersRecyclerView = rootView.findViewById(R.id.rvSuggestedCenters)    //get your recyclerview on the layout you inflated based on its ID
-        centersRecyclerView.layoutManager = LinearLayoutManager(context)
+        centersRecyclerView.layoutManager = LinearLayoutManager(context)        //intialize recyclerview
         centersRecyclerView.setHasFixedSize(true)
         centersArrayList = arrayListOf<Centers>()   //initalize arrays
         centersSearchedList = arrayListOf<Centers>()
         bundle = Bundle()
-        var topText: TextView = rootView.findViewById(R.id.tvSuggestedRC)
 
-        getArticleData()
+
+        var topText: TextView = rootView.findViewById(R.id.tvSuggestedRC)
+        //Gets the article data to set into the recyclerview
+        getCenterData()
+        //For searching
         val queryText: SearchView = rootView.findViewById(R.id.locationsvFragment)
+        //when a query is entered in the keyboard, gets the search results from the list, sets to recyclerview
         queryText.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 queryText.clearFocus()
@@ -64,6 +68,8 @@ class CentersFragment : Fragment() {
 
         return rootView
     }
+    //gets the query from the list
+    //sets into a intiaized list
     private fun getQuery(query : String){
         centersSearchedList.clear()
         for(center: Centers in centersArrayList)
@@ -81,11 +87,12 @@ class CentersFragment : Fragment() {
     }
 
 
-
+    //sets the list of items into the recyclerview
     private fun setArticleList(){
         val adapter = CentersFragmentAdapter(centersSearchedList)
         centersRecyclerView.adapter = adapter
 
+        //when clicked on an item, brings them to the maps fragment page
         adapter.setOnItemClickListener(object : CentersFragmentAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
                 val rcname = centersArrayList[position].name
@@ -113,8 +120,10 @@ class CentersFragment : Fragment() {
         })
     }
 
-    private fun getArticleData() {
-        database = FirebaseDatabase.getInstance().getReference("Centers")   //Database reference (CHECK DATABASE TO MAKE SURE!!)
+    //gets the center data from the database
+    //sets the intialized list of centers
+    private fun getCenterData() {
+        database = FirebaseDatabase.getInstance().getReference("Centers")   //Database reference
 
         database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -127,6 +136,7 @@ class CentersFragment : Fragment() {
                     val adapter = CentersFragmentAdapter(centersArrayList)
                     centersRecyclerView.adapter = adapter
                     //when you click on a card, do something
+                    //passes data to fragment maps
                     adapter.setOnItemClickListener(object : CentersFragmentAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
                             val rcname = centersArrayList[position].name

@@ -1,39 +1,27 @@
 package com.cmpe133.recycledex
 
-import android.Manifest
-import android.app.ActionBar
-import android.content.pm.PackageManager
+import android.content.Intent
+import android.net.Uri
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentContainerView
-import androidx.recyclerview.widget.RecyclerView
 
 import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.fragment_maps.*
-import org.w3c.dom.Text
-import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 class MapsFragment : Fragment() {
 
@@ -79,7 +67,6 @@ class MapsFragment : Fragment() {
         //start the camera on San Jose, with a 10F zoom
         val zoomlevel = 13f         //This is how close the map starts off
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(37.3382, -121.8863), zoomlevel))
-        setMapLongClick(googleMap)
     }
 
 
@@ -159,6 +146,11 @@ class MapsFragment : Fragment() {
             phoneText.text = phone
             mats.text = materials
             website.text = link
+            website.setOnClickListener {
+                val i = Intent(Intent.ACTION_VIEW)
+                i.data = Uri.parse(link)
+                startActivity(i)
+            }
             isSearched = true
 
             fun checkIfExists(text: String) : Boolean{
@@ -229,7 +221,6 @@ class MapsFragment : Fragment() {
                 val searched = LatLng(lat!!, long!!)
                 googleMap.addMarker(MarkerOptions().position(searched).title(rcname))
                 googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(searched, zoomlevel))
-                setMapLongClick(googleMap)
             }
             //create the map
             val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
@@ -262,25 +253,6 @@ class MapsFragment : Fragment() {
         }
     }
 
-    private fun setMapLongClick(map: GoogleMap) {
-        map.setOnMapLongClickListener { latLng ->
-            // A Snippet is Additional text that's displayed below the title.
-            val snippet = String.format(
-                Locale.getDefault(),
-                "Lat: %1$.5f, Long: %2$.5f",
-                latLng.latitude,
-                latLng.longitude
-            )
-            map.addMarker(
-                MarkerOptions()
-                    .position(latLng)
-                    .title("Dropped Pin")
-                    .snippet(snippet)
-
-            )
-        }
-
-    }
 
 
 

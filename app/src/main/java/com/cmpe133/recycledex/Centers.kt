@@ -1,5 +1,7 @@
 package com.cmpe133.recycledex
-
+/*
+    Centers Class
+ */
 class Centers (var name: String = "",
                var location: String = "",
                var description: String = "",
