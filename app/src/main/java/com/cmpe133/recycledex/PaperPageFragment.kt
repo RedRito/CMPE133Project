@@ -28,10 +28,9 @@ class PaperPageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //val view = inflater!!.inflate(R.layout.fragment_profile, container, false)
         _binding = FragmentPaperPageBinding.inflate(inflater, container, false)
 
-        //MUST USE onClicks in onCreateView, otherwise it will register as NULL after the onCreate!!
+        //onclick = start activity
         binding.paperBackButton.setOnClickListener {
 
             val intent = Intent(context, HomePageActivity::class.java)

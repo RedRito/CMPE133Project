@@ -16,16 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_homepage.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment(R.layout.fragment_homepage) {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
@@ -33,6 +24,8 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
     private lateinit var favcentersRecyclerView: RecyclerView
     private lateinit var bundle: Bundle
 
+
+    //gets an array list of user's favorite recycling centers
     private fun getUserFav(uid: String)
     {
         favArrayList.clear()
@@ -49,6 +42,7 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
                     }
                     val adapter = CentersFragmentAdapter(favArrayList)
                     favcentersRecyclerView.adapter = adapter
+                    //on card click = send data to maps fragment
                     adapter.setOnItemClickListener(object : CentersFragmentAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
                             val rcname = favArrayList[position].name
@@ -88,22 +82,26 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //val view = inflater!!.inflate(R.layout.fragment_profile, container, false)
+        //inflate layout
         val rootView: View = layoutInflater.inflate(R.layout.fragment_homepage, container, false)
+
+        //intialize variables
         favcentersRecyclerView = rootView.findViewById(R.id.rcFavLocHome)
         favcentersRecyclerView.layoutManager = LinearLayoutManager(context)
         favArrayList = arrayListOf<Centers>()
         auth = FirebaseAuth.getInstance()
         bundle = Bundle()
         var uid : String? = null
+        //check if user logged in
         if(auth.currentUser != null)
         {
             uid = auth.currentUser?.uid
             getUserFav(uid!!)
 
         }
-        //MUST USE onClicks in onCreateView, otherwise it will register as NULL after the onCreate!!
 
+        //Intialize all cards in horizontal scroll view
+        //Sets onclick to start activity of that card's info
         var learnto1: ImageView = rootView.findViewById(R.id.learnto1)
         learnto1.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
@@ -139,6 +137,8 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
             transaction.disallowAddToBackStack()
             transaction.commit()
         }
+
+        //Card of top suggested article
         var articleBoxHomePage: CardView = rootView.findViewById(R.id.cvsuggesteditem)
         articleBoxHomePage.setOnClickListener {
             val link = "https://www.recyclenow.com/how-to-recycle/how-is-plastic-recycled"
@@ -146,6 +146,7 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
             i.data = Uri.parse(link)
             startActivity(i)
         }
+        //Card of emissions => goes to profile page
         var calculationbox: CardView = rootView.findViewById(R.id.cv_totalemissions)
         calculationbox.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()

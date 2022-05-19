@@ -13,11 +13,17 @@ class ForgotPassActivity : AppCompatActivity() {
     private  lateinit var  binding: ActivityForgotPassBinding
     private  lateinit var  database: DatabaseReference
     private  lateinit var  firebaseAuth: FirebaseAuth
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //intialize variables
         binding = ActivityForgotPassBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
+
+        //when button is clicked
+        //Send the given email address an reset password email
         binding.btnSubmit2.setOnClickListener {
             val email = binding.tvEmailFillIn.text.toString().trim()
             if(email.isNotEmpty())

@@ -23,16 +23,20 @@ class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+        //inflate layout
         binding = SignupMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
 
+        //intialize variables
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference("Users")
 
+        //creates a user in the database given input
         fun createUser(email: String?) {
             val userId = firebaseAuth.currentUser?.uid
             val user = User(email,0.0, 0.0, 0.0, 0.0, 0.0, 0.0, arrayListOf<Centers>())
+            //check if user is already in database
             if(userId != null)
             {
                 database.child(userId).setValue(user).addOnCompleteListener {
@@ -53,16 +57,18 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
 
-
-
+        //clicking signup button
         binding.signupbutton.setOnClickListener{
+            //get input
             val email = binding.usernameSignUpReal.text.toString().trim()
             val password = binding.passwordSignUpReal.text.toString().trim()
             val confirmPass = binding.cpasswordSignUpReal.text.toString().trim()
+            //check input
             if(email.isNotEmpty() && password.isNotEmpty() && confirmPass.isNotEmpty())
             {
                 if(password == confirmPass)
                 {
+                    //create user in database
                     firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                         if(it.isSuccessful)
                         {

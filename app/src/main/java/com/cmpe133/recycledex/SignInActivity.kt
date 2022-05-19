@@ -20,10 +20,13 @@ class SignInActivity : AppCompatActivity() {
     private  lateinit var  firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //inflate layout
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        //intialize variables
         firebaseAuth = FirebaseAuth.getInstance()
+        //on buttonclick
+        //sign user in, with entered credentials
         binding.loginButton.setOnClickListener{
             val email = binding.usernameSignInLayoutReal.text.toString().trim()
             val password = binding.passwordSignInLayoutReal.text.toString().trim()
@@ -46,6 +49,7 @@ class SignInActivity : AppCompatActivity() {
                 Toast.makeText(this, "Enter a username or password", Toast.LENGTH_SHORT).show()
             }
         }
+        //on click "forgot password" = send to forget user activity
         binding.tvForgotPassword.setOnClickListener {
             val intent = Intent(this@SignInActivity, ForgotPassActivity::class.java)
             startActivity(intent)
@@ -54,6 +58,7 @@ class SignInActivity : AppCompatActivity() {
 
     }
 
+    //on start of page //check if user is logged in
     override fun onStart() {
         super.onStart()
         if(firebaseAuth.currentUser != null)
@@ -61,7 +66,5 @@ class SignInActivity : AppCompatActivity() {
             val intent = Intent(this, HomePageActivity::class.java)
             startActivity(intent)
         }
-        val currentUser = firebaseAuth.currentUser
-        val uid = currentUser?.uid.toString()
     }
 }

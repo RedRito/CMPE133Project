@@ -20,16 +20,6 @@ import kotlinx.android.synthetic.main.fragment_profile.*
 import java.math.RoundingMode
 import java.text.DecimalFormat
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private lateinit var auth: FirebaseAuth
@@ -41,6 +31,8 @@ class ProfileFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //check if user is logged in if yes, gets and shows user data
         auth = FirebaseAuth.getInstance()
         val uid = auth.currentUser?.uid
         database = FirebaseDatabase.getInstance().getReference("Users")
@@ -59,6 +51,8 @@ class ProfileFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+
+        //check if user is logged in if yes, gets and shows user data
         val uid = auth.currentUser?.uid
         database = FirebaseDatabase.getInstance().getReference("Users")
         if(!uid.isNullOrEmpty())
@@ -73,6 +67,7 @@ class ProfileFragment : Fragment() {
         }
     }
 
+    //round downs a given double number to the nearest 100th
     private fun roundDown( num : Double) : String{
         val df = DecimalFormat("#.##")
         df.roundingMode = RoundingMode.DOWN
@@ -81,6 +76,7 @@ class ProfileFragment : Fragment() {
     }
 
 
+    //gets the user data given the userId when logged in
     private fun getUserData(userId: String) {
 
         database.child(userId).get().addOnSuccessListener {
@@ -104,6 +100,7 @@ class ProfileFragment : Fragment() {
                     }
                 }
 
+                //changes text on the layout with user data
                 binding.tvEmail.text = trimEmail
                 binding.tvTotalemiss.text = roundDown(emiss.toString().toDouble()) + " kg"
                 binding.tvPlasticAmount.text = roundDown(plastic.toString().toDouble()) + " kg"
@@ -123,6 +120,7 @@ class ProfileFragment : Fragment() {
 
     }
 
+    //gets an array list of user's favorite recycling centers
     private fun getUserFav(uid: String)
     {
         favArrayList.clear()
@@ -139,6 +137,7 @@ class ProfileFragment : Fragment() {
                     }
                     val adapter = CentersFragmentAdapter(favArrayList)
                     centersRecyclerView.adapter = adapter
+                    //on card click = send data to maps fragment
                     adapter.setOnItemClickListener(object : CentersFragmentAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
                             val rcname = favArrayList[position].name
@@ -178,10 +177,10 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //val view = inflater!!.inflate(R.layout.fragment_profile, container, false)
+        //inflate layout
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
 
-        //MUST USE onClicks in onCreateView, otherwise it will register as NULL after the onCreate!!
+        //intialize variables
         centersRecyclerView = binding.rcFavLocProfile
         centersRecyclerView.layoutManager = LinearLayoutManager(context)
         centersRecyclerView.setHasFixedSize(true)
@@ -189,17 +188,21 @@ class ProfileFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         bundle = Bundle()
         var uid : String? = null
+
+        //check if logged in
         if(auth.currentUser != null)
         {
             uid = auth.currentUser?.uid
             getUserFav(uid!!)
 
         }
+        //onclick button logout = send back to login page
         binding.btnLogout.setOnClickListener {
             auth.signOut()
             val intent = Intent(context, MainActivity::class.java)
             startActivity(intent)
         }
+        //onclick total emissions card = send to calculate emissions page
         binding.cvTotalemissions.setOnClickListener{
             val intent = Intent(context, EmissCalActivity::class.java)
             startActivity(intent)
@@ -207,6 +210,7 @@ class ProfileFragment : Fragment() {
         return binding.root
 
     }
+    //on app exit close page
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

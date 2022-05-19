@@ -20,6 +20,7 @@ class EmissCalActivity : AppCompatActivity() {
     private lateinit var user: User
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //Intialize variables
         binding = ActivityEmissCalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
@@ -31,6 +32,8 @@ class EmissCalActivity : AppCompatActivity() {
         val inputChoice = resources.getStringArray(R.array.choice_array)
         var choice: String? = ""
         var inputed: String? = ""
+
+        //Sets the dropdown menu for the choices of types
         if(binding.spChoice != null){
             val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, items)
             binding.spChoice.adapter = adapter
@@ -46,6 +49,7 @@ class EmissCalActivity : AppCompatActivity() {
                 }
             }
         }
+        //sets the dropdown menu for the choices of weight / amount
         if(binding.spWeightAmount != null)
         {
             val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, inputChoice)
@@ -62,6 +66,8 @@ class EmissCalActivity : AppCompatActivity() {
                 }
             }
         }
+        //Set onclick when clciking button
+        //Calculates amount given the inputs
         binding.btnSubmitAmount.setOnClickListener {
             when {
                 inputed.equals("Weight") -> {
@@ -116,6 +122,8 @@ class EmissCalActivity : AppCompatActivity() {
 
 
     }
+
+    //calculates emissions based on type
     private fun plasticW(weight: Double){
         if(weight < 1)
         {
@@ -227,18 +235,18 @@ class EmissCalActivity : AppCompatActivity() {
         updateUserData("glassSaved",total)
 
     }
+
+
+    //Given an type, updates the user data on emissions
     private fun updateUserData(type : String, value: Double){
         database = FirebaseDatabase.getInstance().getReference("Users")
 
-
+        //Updates the user data
         fun mapAndUpdate(emiss: Double, typeValue: Double){
             var sum = 0.0
-            //Log.println(Log.ASSERT, "typeValue before", typeValue.toString())
-            //Log.println(Log.ASSERT, "Value before", value.toString())
 
             sum = typeValue + value
             var emission = emiss + value
-            //Log.println(Log.ASSERT, "emiss after", emission.toString())
 
             val user = mapOf<String, Double>(
                 "savedemissions" to emission,
@@ -252,7 +260,7 @@ class EmissCalActivity : AppCompatActivity() {
             }
         }
 
-
+        //Get current user data
         database.child(uid).get().addOnSuccessListener {
             val emiss = it.child("savedemissions").value.toString().toDouble()
             val plastic = it.child("plasticSaved").value.toString().toDouble()

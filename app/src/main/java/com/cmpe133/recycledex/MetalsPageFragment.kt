@@ -9,16 +9,6 @@ import android.view.ViewGroup
 import com.cmpe133.recycledex.databinding.FragmentMetalsPageBinding
 import com.cmpe133.recycledex.databinding.FragmentProfileBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MetalsPageFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MetalsPageFragment : Fragment() {
     private var _binding: FragmentMetalsPageBinding? = null
     private val binding get() = _binding!!
@@ -28,10 +18,9 @@ class MetalsPageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //val view = inflater!!.inflate(R.layout.fragment_profile, container, false)
         _binding = FragmentMetalsPageBinding.inflate(inflater, container, false)
 
-        //MUST USE onClicks in onCreateView, otherwise it will register as NULL after the onCreate!!
+        //onclick = start activity
         binding.backButton.setOnClickListener {
 
             val intent = Intent(context, HomePageActivity::class.java)
