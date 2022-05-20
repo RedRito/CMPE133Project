@@ -15,7 +15,9 @@
 10. Click on New -> Project from Version Control
 11. Clone the project
 
-## Usage
+## Run the project
+1. Sync project with gradle files under "File"
+2. Click on run  
 
 
 ## License
