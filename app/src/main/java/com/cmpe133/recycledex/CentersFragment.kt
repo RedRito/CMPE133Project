@@ -54,7 +54,7 @@ class CentersFragment : Fragment() {
 
                 getQuery(query!!)
                 topText.text = "Results"
-                setArticleList()
+                setCenterList()
 
 
                 return true
@@ -88,21 +88,21 @@ class CentersFragment : Fragment() {
 
 
     //sets the list of items into the recyclerview
-    private fun setArticleList(){
+    private fun setCenterList(){
         val adapter = CentersFragmentAdapter(centersSearchedList)
         centersRecyclerView.adapter = adapter
 
         //when clicked on an item, brings them to the maps fragment page
         adapter.setOnItemClickListener(object : CentersFragmentAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-                val rcname = centersArrayList[position].name
-                val location = centersArrayList[position].location
-                val hours = centersArrayList[position].description
-                val phone = centersArrayList[position].phone
-                val materials = centersArrayList[position].accepted
-                val link = centersArrayList[position].link
-                val lat = centersArrayList[position].lat
-                val lon = centersArrayList[position].lon
+                val rcname = centersSearchedList[position].name
+                val location = centersSearchedList[position].location
+                val hours = centersSearchedList[position].description
+                val phone = centersSearchedList[position].phone
+                val materials = centersSearchedList[position].accepted
+                val link = centersSearchedList[position].link
+                val lat = centersSearchedList[position].lat
+                val lon = centersSearchedList[position].lon
                 bundle.putString("rcname", rcname)
                 bundle.putString("location", location)
                 bundle.putString("hours", hours)
