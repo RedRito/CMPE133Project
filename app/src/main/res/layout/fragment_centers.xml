@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#9C6A5554"
+    android:backgroundTint="@color/lightbrown"
     tools:context=".CentersFragment">
 
     <androidx.appcompat.widget.SearchView
@@ -24,13 +26,14 @@
 
     <TextView
         android:id="@+id/tvSuggestedRC"
-        android:text="Suggested Location"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginTop="4dp"
+        android:text="SUGGESTED LOCATIONS"
         android:textAlignment="center"
-        android:textColor="@color/mildishGreen"
+        android:textColor="#4B5A48"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,12 +43,12 @@
         android:id="@+id/rvSuggestedCenters"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvSuggestedRC"
+        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/centers_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
