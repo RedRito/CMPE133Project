@@ -78,8 +78,9 @@ class CentersFragment : Fragment() {
             val desc = center.description.lowercase()
             val phone = center.phone.lowercase()
             val loc = center.location.lowercase()
+            val accepted = center.accepted.lowercase()
             val query = query.lowercase()
-            if(name.contains(query) || desc.contains(query) || phone.contains(query) || loc.contains(query))
+            if(name.contains(query) || desc.contains(query) || phone.contains(query) || loc.contains(query) || accepted.contains(query))
             {
                 centersSearchedList.add(center)
             }
