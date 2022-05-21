@@ -14,6 +14,9 @@
 9. Navigate to file
 10. Click on New -> Project from Version Control
 11. Clone the project
+12. Copy the project url
+13. Under repository url paste the link
+14. Click clone
 
 ## Run the project
 1. Sync project with gradle files under "File"
