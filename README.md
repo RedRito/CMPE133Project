@@ -22,7 +22,19 @@
 1. Sync project with gradle files under "File"
 2. Click on run  
 
-#### Note
+
+## Notes
+1. The Google maps page may crash due to issues with the API and null bitmap
+2. In such a case, please reinstall the applications
+ - To reinstall 
+ - go to settings -> Apps & notifications -> find the app -> uninstall.
+ - click run ( shift + F10 )
+3. There are issues with the emulator that may cause the emulator UI to fail
+4. In such case, cold boot the device
+ - Exit the emulator
+ - Open device manager
+ - Under the problem device actions click on the dropdown menu
+ - click on Cold Boot Now
 The api key for Google Maps API will be removed from the files June 10th, 2022
 
 ## License
