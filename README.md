@@ -22,7 +22,7 @@
 1. Sync project with gradle files under "File"
 2. Click on run  
 
-## Note
+#### Note
 The api key for Google Maps API will be removed from the file June 10th, 2022
 
 ## License
