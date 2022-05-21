@@ -41,7 +41,7 @@ class EmissCalActivity : AppCompatActivity() {
             binding.spChoice.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, pos: Int, id: Long) {
                     choice = items[pos].toString()
-                    Toast.makeText(this@EmissCalActivity, items[pos].toString(), Toast.LENGTH_SHORT).show()
+
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -58,7 +58,6 @@ class EmissCalActivity : AppCompatActivity() {
             binding.spWeightAmount.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, pos: Int, id: Long) {
                     inputed = inputChoice[pos].toString()
-                    Toast.makeText(this@EmissCalActivity, inputChoice[pos].toString(), Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -131,7 +130,7 @@ class EmissCalActivity : AppCompatActivity() {
             return
         }
         // 1kg of plastic = X kg amount of carbon emission
-        val plastic = 1.7
+        val plastic = 6.0
         var total = plastic * weight
         updateUserData("plasticSaved",total)
     }
@@ -141,7 +140,7 @@ class EmissCalActivity : AppCompatActivity() {
             Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
             return
         }
-        var paper = .5
+        var paper = 1.0
         var total = paper * weight
         updateUserData("paperSaved",total)
 
@@ -152,7 +151,7 @@ class EmissCalActivity : AppCompatActivity() {
             Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
             return
         }
-        var metal = 2.0
+        var metal = 5.12
         var total = metal * weight
         updateUserData("metalSaved",total)
     }
@@ -162,7 +161,7 @@ class EmissCalActivity : AppCompatActivity() {
             Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
             return
         }
-        var elect = 10.0
+        var elect = 55.0
         var total = elect * weight
         updateUserData("electSaved",total)
 
@@ -173,7 +172,7 @@ class EmissCalActivity : AppCompatActivity() {
             Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
             return
         }
-        var glass = 3.0
+        var glass = 1.25
         var total = glass * weight
         updateUserData("glassSaved",total)
     }
@@ -186,7 +185,7 @@ class EmissCalActivity : AppCompatActivity() {
             return
         }
         // 1 plastic bag = x kg amount of carbon emission
-        val plastic = .5
+        val plastic = .033
         var total = plastic * number
         updateUserData("plasticSaved",total)
 
@@ -197,7 +196,7 @@ class EmissCalActivity : AppCompatActivity() {
             Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
             return
         }
-        var paper = .5
+        var paper = .0045
         var total = paper * number
         updateUserData("paperSaved",total)
 
@@ -208,7 +207,7 @@ class EmissCalActivity : AppCompatActivity() {
             Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
             return
         }
-        var metal = 2.0
+        var metal = .195
         var total = metal * number
         updateUserData("metalSaved",total)
 
@@ -219,7 +218,7 @@ class EmissCalActivity : AppCompatActivity() {
             Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
             return
         }
-        var elect = 10.0
+        var elect = 9.8615
         var total = elect * number
         updateUserData("electSaved",total)
 
@@ -230,7 +229,7 @@ class EmissCalActivity : AppCompatActivity() {
             Toast.makeText(this@EmissCalActivity, "invalid amount", Toast.LENGTH_SHORT).show()
             return
         }
-        var glass = 3.0
+        var glass = .225
         var total = glass * number
         updateUserData("glassSaved",total)
 

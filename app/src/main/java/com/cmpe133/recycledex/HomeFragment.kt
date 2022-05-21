@@ -112,7 +112,7 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
                 if(it.exists())
                 {
                     var emiss = it.child("savedemissions").value
-                    emissSaved.text = roundDown(emiss.toString().toDouble())
+                    emissSaved.text = roundDown(emiss.toString().toDouble()) + " kg"
                 }
                 else
                 {
