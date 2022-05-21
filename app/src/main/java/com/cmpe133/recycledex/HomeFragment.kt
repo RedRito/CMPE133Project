@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_homepage.*
+import org.w3c.dom.Text
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 
 class HomeFragment : Fragment(R.layout.fragment_homepage) {
@@ -77,6 +81,14 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
 
         })
     }
+    //round downs a given double number to the nearest 100th
+    private fun roundDown( num : Double) : String{
+        val df = DecimalFormat("#.##")
+        df.roundingMode = RoundingMode.DOWN
+        val round =  df.format(num)
+        return round.toString()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -92,12 +104,30 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
         auth = FirebaseAuth.getInstance()
         bundle = Bundle()
         var uid : String? = null
+        var emissSaved: TextView = rootView.findViewById(R.id.tv_totalemiss)
+        //gets the user data given the userId when logged in
+        fun getUserData(userId: String) {
+
+            database.child(userId).get().addOnSuccessListener {
+                if(it.exists())
+                {
+                    var emiss = it.child("savedemissions").value
+                    emissSaved.text = roundDown(emiss.toString().toDouble())
+                }
+                else
+                {
+                    Toast.makeText(context, "User does not exist", Toast.LENGTH_SHORT).show()
+                }
+            }.addOnFailureListener{
+                Toast.makeText(context, "Login To See Data", Toast.LENGTH_SHORT).show()
+            }
+        }
         //check if user logged in
         if(auth.currentUser != null)
         {
             uid = auth.currentUser?.uid
             getUserFav(uid!!)
-
+            getUserData(uid)
         }
 
         //Intialize all cards in horizontal scroll view
@@ -141,7 +171,7 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
         //Card of top suggested article
         var articleBoxHomePage: CardView = rootView.findViewById(R.id.cvsuggesteditem)
         articleBoxHomePage.setOnClickListener {
-            val link = "https://www.recyclenow.com/how-to-recycle/how-is-plastic-recycled"
+            val link = "https://sanjoserecycles.org/5-reasons-to-recycle/"
             val i = Intent(Intent.ACTION_VIEW)
             i.data = Uri.parse(link)
             startActivity(i)
@@ -154,6 +184,7 @@ class HomeFragment : Fragment(R.layout.fragment_homepage) {
             transaction.disallowAddToBackStack()
             transaction.commit()
         }
+
         return rootView
     }
 }

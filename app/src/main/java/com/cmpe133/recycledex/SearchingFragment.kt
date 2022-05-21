@@ -54,10 +54,6 @@ class SearchingFragment : Fragment(R.layout.fragment_search) {
                 queryText.clearFocus()
 
                 getQuery(query!!)
-                for(articles in articleSearchedList)
-                {
-                    Toast.makeText(context, articles.title, Toast.LENGTH_SHORT).show()
-                }
                 topText.text = "Results"
                 setArticleList()
 
