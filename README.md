@@ -34,7 +34,9 @@
  - Exit the emulator
  - Open device manager
  - Under the problem device actions click on the dropdown menu
- - click on Cold Boot Now
+ - Click on Cold Boot Now
+
+#### PS
 The api key for Google Maps API will be removed from the files June 10th, 2022
 
 ## License
