@@ -5,8 +5,8 @@
 ## Installation
 
 1. Download [Android Studio]( https://developer.android.com/studio)
-2. Make sure you can run [emulators] on your PC (https://developer.android.com/studio/run/emulator) 
-3. Open up Android Studio
+2. Make sure you can run [emulators] on your PC(https://developer.android.com/studio/run/emulator) 
+3. Open up Android Studio 
 4. Navigate to the device and click on it
 5. Select "Create Device"
 7. Choose an option from the Phone tab (Pixel 4 recommended)
