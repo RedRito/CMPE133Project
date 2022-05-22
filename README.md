@@ -5,7 +5,7 @@
 ## Installation
 
 1. Download [Android Studio]( https://developer.android.com/studio)
-2. Make sure you can run [emulators] on your PC(https://developer.android.com/studio/run/emulator) 
+2. Make sure you can run [emulators](https://developer.android.com/studio/run/emulator) on your PC
 3. Open up Android Studio 
 4. Navigate to the device and click on it
 5. Select "Create Device"
